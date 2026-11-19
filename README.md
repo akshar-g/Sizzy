@@ -1,131 +1,126 @@
-# ✦ Sizzy — Find Your Perfect Fit
+# SIZZY
 
-<p align="center">
-  **Your true size. Every brand. Zero guessing.**
-</p>
+### Your True Size. Every Brand. Zero Guessing.
 
-Sizzy is a smart, privacy-focused clothing size recommendation platform that helps you discover your best-fitting size across popular fashion brands. Enter your measurements, explore different fits, compare brands, and build your personal wardrobe — all in one place.
+A smarter way to find your perfect fit.
 
-No measuring tape. No unnecessary guesswork. Just a better way to shop.
+\<p align="center">
+&#x20; \<a href="[https://sizzy-studio.vercel.app/](https://sizzy-studio.vercel.app/)">Live Demo\</a> ·
+&#x20; \<a href="[https://github.com/akshar-g/Sizzy](https://github.com/akshar-g/Sizzy)">Source Code\</a>
+\</p>
 
 ---
 
-## ✨ Features
+## Overview
 
-- **🎯 Smart Size Recommendations** — Get personalized clothing size suggestions based on your height, weight, and body build.
-- **🧪 Fit Lab** — Experiment with different sizes and visualize snug, regular, and oversized fits.
-- **🛍️ Fashion Catalog** — Explore clothing items, compare sizing, and discover products across brands.
-- **👕 My Closet** — Save your favorite items, looks, and fit preferences.
-- **🏷️ Brand Comparison** — Discover how sizing differs between popular fashion brands.
-- **🔒 Privacy First** — Your profile and saved preferences stay in your browser. No backend or tracking.
+**Sizzy** is a modern fashion-tech platform that makes finding the right clothing size simpler.
 
-## 🌍 Supported Brands
+Different brands follow different sizing standards. Sizzy bridges that gap by transforming your measurements into personalized, brand-specific size recommendations.
 
-Explore sizing recommendations across:
+From intelligent size estimation to interactive fit visualization, Sizzy brings a smarter shopping experience into one place.
 
-- Zara
-- H&M
-- Uniqlo
-- Snitch
-- Bewakoof
-- Levi's
-- Roadster
-- Jack & Jones
+**Measure once. Shop anywhere. Find your fit.**
 
-## 🎨 Design Philosophy
+## Features
 
-Sizzy combines modern fashion technology with a premium visual experience.
+- **Size Studio** — Get personalized size recommendations using your measurements, with optional photo-based estimation.
+- **Fit Lab** — Explore different sizes and visualize snug, regular, and oversized fits.
+- **Fashion Catalog** — Discover clothing, explore garment sizing, and add custom items.
+- **My Closet** — Save your favorite items, looks, and personal fit preferences.
+- **Brand Comparison** — Compare sizing across multiple fashion brands.
+- **Fit Journal** — Keep track of your saved sizing preferences and fit experiences.
+- **Community** — Explore clothing reviews and shared fit experiences.
 
-- Dark, minimalist interface
-- Apple-inspired liquid glass aesthetics
-- Smooth animations and interactive elements
-- Responsive design
-- Modern typography and vibrant accents
+## Supported Brands
 
-## 🛠️ Built With
+Zara · H&M · Uniqlo · Snitch · Bewakoof · Levi's · Roadster · Jack & Jones
 
-| Technology | Purpose |
-|---|---|
-| HTML5 | Application structure |
-| CSS3 | Styling, animations and responsive design |
-| JavaScript | Application logic and interactivity |
-| LocalStorage | Saving user preferences |
-| Google Fonts | Typography |
+## Design
 
-## 🚀 Getting Started
+Built with a focus on simplicity, usability, and visual detail.
 
-Want to run Sizzy on your computer?
+- Minimal dark interface
+- Modern typography
+- Smooth interactions and animations
+- Responsive layouts
+- Interactive SVG visualizations
+- Premium lime-accented aesthetic
+
+## Tech Stack
+
+| Technology   | Purpose                |
+| ------------ | ---------------------- |
+| HTML5        | Structure              |
+| CSS3         | Styling and animations |
+| JavaScript   | Application logic      |
+| SVG          | Interactive graphics   |
+| Three.js     | 3D visualization       |
+| LocalStorage | Local data persistence |
+
+## Getting Started
+
+Run Sizzy locally in a few simple steps.
 
 **1. Clone the repository**
 
-\`\`\`bash
+```bash
 git clone https://github.com/akshar-g/Sizzy.git
-\`\`\`
+```
 
-**2. Open the project folder**
+**2. Open the project directory**
 
-\`\`\`bash
+```bash
 cd Sizzy
-\`\`\`
+```
 
-**3. Launch the application**
+**3. Launch**
 
-Open `index.html` in your preferred modern web browser.
+Open `index.html` in a modern web browser.
 
-That's it! No installation or build process required.
+No build process or backend setup is required.
 
-## 🌐 Live Demo
+## Privacy
 
-**[Visit Sizzy](https://akshar-g.github.io/Sizzy/)**
+Privacy is built into Sizzy's architecture.
 
-*If GitHub Pages has not been enabled yet, publish the repository through Settings → Pages.*
+- No backend database.
+- No account server or remote profile storage.
+- Measurements and preferences are saved locally in your browser.
+- Optional photos are processed locally and never uploaded.
+- Personal information remains on your device.
 
-## 📁 Project Structure
+*Clearing browser site data will remove locally saved information.*
 
-\`\`\`text
+## Deployment
+
+Hosted on **Vercel**.
+
+↗ [https://sizzy-studio.vercel.app/](https://sizzy-studio.vercel.app/)
+
+## Project Structure
+
+```text
 Sizzy/
-│
-├── index.html     # Main application
-├── favicon.svg    # Website favicon
-├── 404.html       # Custom error page
-├── robots.txt     # Search engine instructions
-├── .nojekyll      # GitHub Pages configuration
-├── .gitignore     # Git ignored files
-├── LICENSE        # MIT License
-└── README.md      # Project documentation
-\`\`\`
+├── index.html
+├── favicon.svg
+├── 404.html
+├── robots.txt
+├── .nojekyll
+├── .gitignore
+├── LICENSE
+└── README.md
+```
 
-## 🔐 Privacy
+## Disclaimer
 
-Your privacy matters.
+Size recommendations are estimates based on available garment sizing information and personal measurements. Actual fit may vary by brand, product, and individual preference.
 
-- No backend server required.
-- No user account required for local usage.
-- Personal preferences are stored in browser LocalStorage.
-- Clearing browser site data will remove locally saved information.
+Always check the official brand size guide before purchasing.
 
-## ⚠️ Disclaimer
+## License
 
-Size recommendations are estimates and may vary depending on the brand, product, and individual fit preferences. Always check the official brand size guide before purchasing.
-
-## 🤝 Contributing
-
-Contributions, suggestions, and improvements are welcome!
-
-1. Fork this repository.
-2. Create a new branch.
-3. Make your changes.
-4. Submit a pull request.
-
-## 📜 License
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
-<p align="center">
-  **Made with ❤️ for a better-fitting future.**
-  
-  <br/>
-  **SIZZY © 2026**
-</p>
+\<p align="center">   \<strong>SIZZY ✦\</strong>   \<br/>   Find Your Fit. Own Your Style.   \<br/>\<br/>   Built with care. \</p>
