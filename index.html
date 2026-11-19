@@ -2617,8 +2617,6 @@ a, label, summary, select, [role="button"] { -webkit-tap-highlight-color: transp
         <li><a href="#/catalog" class="sizzy-nav-link">Catalog</a></li>
         <li><a href="#/lab" class="sizzy-nav-link">Fit Lab</a></li>
         <li><a href="#/closet" class="sizzy-nav-link">My Closet</a></li>
-        <li><a href="#/brands" class="sizzy-nav-link">Brands</a></li>
-        <li><a href="#/community" class="sizzy-nav-link">Community</a></li>
       </ul>
 
       <!-- Right: Action Icons & Local Sign-in Pill -->
@@ -2626,11 +2624,6 @@ a, label, summary, select, [role="button"] { -webkit-tap-highlight-color: transp
         <!-- Help / FAQ Button -->
         <button type="button" id="sizzy-help-btn" class="sizzy-icon-btn" aria-label="Open Frequently Asked Questions">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </button>
-
-        <!-- Sign In Pill (Local Profile in localStorage) -->
-        <button type="button" id="sizzy-signin-btn" class="sizzy-signin-pill">
-          <span class="sizzy-signin-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span><span class="sizzy-signin-label">Sign In</span>
         </button>
 
         <!-- Mobile Menu Toggle Button -->
@@ -3389,7 +3382,7 @@ window.SIZZY_DATA = (function () {
     },
     {
       q: 'Is any of my physical data saved or sent to servers?',
-      a: "Never. Sizzy runs 100% locally in your web browser. All measurements, preferences, wishlist items, and fit journal logs are stored in your device's localStorage. No cookies, no external tracking, no backend database, no phone numbers, and never any photo uploads."
+      a: "Never. Sizzy runs 100% locally in your web browser. All measurements, preferences, wishlist items, and fit journal logs are stored in your device's localStorage. No cookies, no external tracking, no backend database, no phone numbers, and photos you add for a body estimate are analysed in your browser and never uploaded."
     },
     {
       q: 'Can I add clothes that I am browsing right now?',
@@ -3778,6 +3771,15 @@ window.SIZZY_DATA = (function () {
         matchScore = Math.max(40, matchScore - 20);
       }
 
+      let borderline = null;
+      if (!isOutOfRange) {
+        const idx = sizes.indexOf(matchedSize);
+        const distLow = effectiveChest - matchedSize.chestMin;
+        const distHigh = matchedSize.chestMax - effectiveChest;
+        if (distHigh <= 1.5 && idx < sizes.length - 1) borderline = `Borderline with ${sizes[idx + 1].size}: size up if you like it looser.`;
+        else if (distLow <= 1.5 && idx > 0) borderline = `Borderline with ${sizes[idx - 1].size}: size down if you like it closer.`;
+      }
+
       const runTag = this.calculateRunTag(brandId, matchedSize.size, gender, category);
 
       let reasonTrace = `Estimated chest ${bodyChestCm} cm`;
@@ -3814,7 +3816,8 @@ window.SIZZY_DATA = (function () {
         placeholderNotice: chart.placeholderNotice || null,
         easeApplied: chart.easeApplied || null,
         reasonTrace,
-        spec: matchedSize
+        spec: matchedSize,
+        borderline
       };
     },
 
@@ -4826,7 +4829,7 @@ BOTTOMS: {
             this.renderBrandsView(appContainer);
             break;
           case '#/community':
-            this.renderCommunityView(appContainer);
+            this.renderHomeView(appContainer);
             break;
           case '#/compare':
             this.renderCompareView(appContainer);
@@ -5063,8 +5066,8 @@ BOTTOMS: {
           <!-- Infinite Marquee Banner -->
           <div class="sizzy-marquee-banner" aria-hidden="true">
             <div class="sizzy-marquee-track">
-              <span>M at Zara</span><span>=</span><span>L at H&amp;M</span><span>=</span><span>S at Uniqlo</span><span>=</span><span>Still you</span><span>=</span>
-              <span>M at Zara</span><span>=</span><span>L at H&amp;M</span><span>=</span><span>S at Uniqlo</span><span>=</span><span>Still you</span><span>=</span>
+              <span>M at Zara</span><span>=</span><span>M at H&amp;M</span><span>=</span><span>S at Snitch</span><span>=</span><span>Still you</span><span>=</span>
+              <span>M at Zara</span><span>=</span><span>M at H&amp;M</span><span>=</span><span>S at Snitch</span><span>=</span><span>Still you</span><span>=</span>
             </div>
           </div>
 
@@ -5181,7 +5184,7 @@ BOTTOMS: {
               <div class="sizzy-closet-pill-group">
                 <div class="sizzy-closet-pill">
                   <span>Active Size:</span>
-                  <strong>Zara M</strong>
+                  <strong>${this.profile.usualBrand ? this.profile.usualBrand.toUpperCase() + ' ' + this.profile.usualSize : 'Not set'}</strong>
                 </div>
                 <div class="sizzy-closet-pill">
                   <span>Wishlist:</span>
@@ -5227,7 +5230,7 @@ BOTTOMS: {
             <div class="sizzy-section-header">
               <span class="sizzy-section-tag">CATALOG PREVIEW</span>
               <h2 class="sizzy-section-title">Popular items sized for you</h2>
-              <p class="sizzy-section-desc">Real Indian market garments with verified ease calculations.</p>
+              <p class="sizzy-section-desc">Sample garments. Add real ones from any brand page.</p>
             </div>
 
             <div class="sizzy-catalog-grid">
@@ -5250,38 +5253,10 @@ BOTTOMS: {
 
     initStickyHeroScroll() {
       const STAGES = [
-        {
-          b: "Zara",
-          s: "Same body. Medium at Zara.",
-          v: "<em>Perfect.</em>",
-          c: "#C8FF3D",
-          sx: 1.0,
-          t: "Scroll. Watch one body get three different Mediums."
-        },
-        {
-          b: "H&M",
-          s: "Same body. Medium at H&M.",
-          v: "Too <em style=\"color:#FF6A45\">tight.</em>",
-          c: "#FF6A45",
-          sx: 0.84,
-          t: "Same label, smaller garment. European slim block clings across the chest."
-        },
-        {
-          b: "Uniqlo",
-          s: "Same body. Medium at Uniqlo.",
-          v: "Way too <em style=\"color:#FF6A45\">big.</em>",
-          c: "#FF6A45",
-          sx: 1.32,
-          t: "Room for a friend. Generous +10 cm ease means you should size down to Small."
-        },
-        {
-          b: "Sizzy",
-          s: "Same body. Every brand.",
-          v: "<em>Sized.</em>",
-          c: "#C8FF3D",
-          sx: 1.0,
-          t: "M at Zara. L at H&M. S at Uniqlo. One profile, zero extra returns."
-        }
+        { b: "Zara", s: "Same body. Medium at Zara.", v: "<em>Perfect.</em>", c: "#C8FF3D", sx: 1.0, t: "Scroll. Same body, different size charts." },
+        { b: "H&M", s: "Same body. Medium at H&M.", v: "Also <em>M.</em>", c: "#C8FF3D", sx: 1.04, t: "Different brand, same label. Here the two charts happen to agree." },
+        { b: "Snitch", s: "Same body. Medium at Snitch.", v: "Go <em style=\"color:#FF6A45\">S.</em>", c: "#FF6A45", sx: 1.32, t: "Boxy cut: its M is built for a bigger chest, so your true size is S." },
+        { b: "Sizzy", s: "Same body. Every brand.", v: "<em>Sized.</em>", c: "#C8FF3D", sx: 1.0, t: "M at Zara. M at H&M. S at Snitch. One profile." }
       ];
 
       const heroEl = document.getElementById('sizzy-hero-stage-root');
@@ -5331,6 +5306,8 @@ BOTTOMS: {
         }
       };
 
+      if (this._heroScroll) { window.removeEventListener('scroll', this._heroScroll); window.removeEventListener('resize', this._heroScroll); }
+      this._heroScroll = updateScroll;
       window.addEventListener('scroll', updateScroll, { passive: true });
       window.addEventListener('resize', updateScroll);
       updateScroll();
@@ -5980,7 +5957,7 @@ BOTTOMS: {
             </div>
 
             <div class="sizzy-match-meter">
-              <div class="sizzy-match-meter-top"><span>Match</span><b>${match.matchScore}%</b></div>
+              <div class="sizzy-match-meter-top"><span>Confidence</span><b>${(match.borderline ? 'Borderline' : (match.isOutOfRange ? 'Out of range' : 'Clear fit'))}</b></div>
               <div class="sizzy-match-track"><i style="width:${Math.max(4, Math.min(100, parseFloat(match.matchScore) || 0))}%"></i></div>
             </div>
 
@@ -6116,9 +6093,9 @@ BOTTOMS: {
         <div class="sizzy-catalog-view">
           <div class="sizzy-catalog-banner">
             <div class="sizzy-banner-text">
-              <span class="sizzy-badge-chip">AUTHENTIC PRODUCT CATALOG</span>
+              <span class="sizzy-badge-chip">SAMPLE CATALOG</span>
               <h1 class="sizzy-catalog-title">Shop Famous Brands With Your True Size</h1>
-              <p class="sizzy-catalog-sub">Real Indian retail prices and sizing specs from Zara, H&amp;M, Uniqlo, Snitch, and Bewakoof.</p>
+              <p class="sizzy-catalog-sub">Sample items for now: prices and garment specs are not verified yet. Add a real item from any brand page.</p>
             </div>
             <button id="sizzy-open-add-item-modal-btn" class="sizzy-btn sizzy-btn-primary">
               + Add item from a brand page
@@ -6362,7 +6339,7 @@ BOTTOMS: {
           <div class="sizzy-card-info">
             <div class="sizzy-card-brand-row">
               ${this.renderBrandWordmark(item.brand, item.brandName)}
-              <span class="sizzy-card-price">₹${item.price}</span>
+              <span class="sizzy-card-price">₹${item.price}</span>${item.isDemo ? '<span class="sizzy-badge-chip" title="Specs not verified yet">Sample</span>' : ''}
             </div>
 
             <h3 class="sizzy-card-title">
@@ -6635,21 +6612,9 @@ BOTTOMS: {
                     <p class="sizzy-zone-text" id="sizzy-zone-shoulder-desc">${this.escapeHtml(fitEval.shoulderExplanation)}</p>
                   </div>
 
-                  <div class="sizzy-heatmap-zone">
-                    <div class="sizzy-zone-header">
-                      <span class="sizzy-zone-name">Length</span>
-                      <span class="sizzy-zone-verdict lime">Just right</span>
-                    </div>
-                    <p class="sizzy-zone-text">Length of ${specs.length} cm falls cleanly at upper hip level.</p>
-                  </div>
+                  
 
-                  <div class="sizzy-heatmap-zone">
-                    <div class="sizzy-zone-header">
-                      <span class="sizzy-zone-name">Sleeves</span>
-                      <span class="sizzy-zone-verdict lime">Just right</span>
-                    </div>
-                    <p class="sizzy-zone-text">Comfortable armhole circumference with no binding at the bicep.</p>
-                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -6672,7 +6637,7 @@ BOTTOMS: {
                     <span class="sizzy-callout-size">${recommendedSize}</span>
                   </div>
                   <div class="sizzy-callout-right">
-                    <div class="sizzy-match-score-pill">${brandMatch.found ? brandMatch.matchScore : 90}% Match</div>
+                    <div class="sizzy-match-score-pill">${brandMatch.found ? (brandMatch.borderline ? 'Borderline' : (brandMatch.isOutOfRange ? 'Out of range' : 'Clear fit')) : 'Estimate'}</div>
                     <div class="sizzy-risk-pill ${fitEval.returnRisk === 'Low' ? 'lime' : (fitEval.returnRisk === 'High' ? 'coral' : 'blue')}">
                       ${fitEval.returnRisk} Return Risk
                     </div>
@@ -6757,6 +6722,7 @@ BOTTOMS: {
           container.querySelectorAll('#sizzy-item-size-chips .sizzy-item-size-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           const newSize = btn.getAttribute('data-size');
+          selectedSize = newSize;
           const newSpecs = (item.garmentSpecs && item.garmentSpecs[newSize]) || { flatChestWidth: 54, length: 72, shoulder: 46 };
           const newFit = SizzyEngine.evaluateItemFit(newSpecs, userMetrics, this.profile.fitPreference);
 
@@ -7112,7 +7078,7 @@ BOTTOMS: {
             <td style="padding:12px 14px;"><span class="sizzy-matrix-size-pill" style="font-size:20px; font-weight:800; color:var(--lime);">${match.size}</span></td>
             <td style="padding:12px 14px; color:var(--text-muted);">${match.chestMin}–${match.chestMax} cm</td>
             <td style="padding:12px 14px;"><span class="sizzy-run-tag ${match.runTag === 'runs small' ? 'coral' : 'lime'}">${match.runTag}</span></td>
-            <td style="padding:12px 14px;"><strong>${match.matchScore}%</strong></td>
+            <td style="padding:12px 14px;"><strong>${(match.borderline ? 'Borderline' : (match.isOutOfRange ? 'Out of range' : 'Clear fit'))}</strong></td>
           </tr>
         `;
       }).join('');
