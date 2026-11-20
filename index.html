@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Sizzy — Your True Size at Every Brand</title>
-  <meta name="description" content="Sizzy turns your height, weight and build into your recommended size at Zara, H&M, Uniqlo, Snitch and Bewakoof. Zero guessing, photos optional and never uploaded.">
+  <meta name="description" content="Sizzy turns your height, weight and build into your recommended size at Zara, H\&M, Uniqlo, Snitch, Bewakoof, Levi\'s, Roadster and Jack \& Jones. No account, photos optional and never uploaded.">
 
   <!-- Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheet -->
+  
   <style>
 /* ==========================================================================
    SIZZY DESIGN SYSTEM - APPLE LIQUID GLASS & RETRO PIXEL ART SHOWCASE
@@ -264,7 +265,6 @@ em {
   transform: scale(0.95);
 }
 
-.sizzy-signin-pill {
   background: var(--lime);
   color: #07080A;
   border: none;
@@ -282,13 +282,11 @@ em {
   box-shadow: 0 4px 16px var(--lime-glow), inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-.sizzy-signin-pill:hover {
   background: var(--lime-hover);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px var(--lime-glow);
 }
 
-.sizzy-signin-pill:active {
   transform: translateY(0) scale(0.97);
 }
 
@@ -2368,57 +2366,14 @@ html.sizzy-smooth { scroll-behavior: auto; }
 @keyframes sizzyNudgeLeft { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-3px); } }
 
 /* ---- Sign In pill ---- */
-.sizzy-signin-pill { position: relative; overflow: hidden; gap: 8px; padding: 0 22px 0 16px; isolation: isolate; animation: sizzyPillPulse 3.2s ease-in-out infinite; }
-.sizzy-signin-pill::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%); transform: translateX(-120%); animation: sizzySheen 3.6s ease-in-out infinite; }
-.sizzy-signin-ico { display: grid; place-items: center; transition: transform .5s cubic-bezier(.34,1.56,.64,1); }
-.sizzy-signin-pill:hover .sizzy-signin-ico { transform: rotate(-12deg) scale(1.2); }
-.sizzy-signin-pill:hover { animation-play-state: paused; }
-.sizzy-signin-pill.signed { animation: none; }
-.sizzy-signin-pill.signed::before { animation-duration: 6s; }
-.sizzy-signin-pill.signed .sizzy-signin-ico { width: 24px; height: 24px; border-radius: 50%; background: #07080A; color: var(--lime); }
-.sizzy-signin-pill.signed .sizzy-signin-ico svg { width: 14px; height: 14px; }
-@keyframes sizzySheen { 0%, 55% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
-@keyframes sizzyPillPulse { 0%,100% { box-shadow: 0 4px 16px var(--lime-glow), inset 0 1px 1px 0 rgba(255,255,255,.4), 0 0 0 0 rgba(200,255,61,.45); } 50% { box-shadow: 0 4px 16px var(--lime-glow), inset 0 1px 1px 0 rgba(255,255,255,.4), 0 0 0 9px rgba(200,255,61,0); } }
 
 /* ---- Sign In modal ---- */
 .sizzy-modal-backdrop.active { animation: sizzyFadeIn .35s ease both; }
 .sizzy-modal-backdrop.active .sizzy-modal-card { animation: sizzyModalIn .6s cubic-bezier(.34,1.4,.64,1) both; }
 @keyframes sizzyFadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes sizzyModalIn { from { opacity: 0; transform: translateY(28px) scale(.92); } to { opacity: 1; transform: none; } }
-.sizzy-auth-card { max-width: 440px; position: relative; overflow: hidden; padding: 36px 32px 28px; border-radius: 32px; }
-.sizzy-auth-card::before { content: ""; position: absolute; top: -90px; left: 50%; width: 320px; height: 220px; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(200,255,61,.28), transparent); pointer-events: none; animation: sizzyGlowBreath 4s ease-in-out infinite; }
-@keyframes sizzyGlowBreath { 0%,100% { opacity: .7; } 50% { opacity: 1; } }
-.sizzy-auth-x { position: absolute; top: 14px; right: 14px; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.07); transition: transform .4s cubic-bezier(.34,1.56,.64,1), background .25s, color .25s; z-index: 2; }
-.sizzy-auth-x:hover { transform: rotate(90deg) scale(1.08); background: rgba(255,255,255,.16); color: var(--text-main); }
-.sizzy-auth-hero { position: relative; text-align: center; margin-bottom: 22px; }
-.sizzy-auth-hero .sizzy-modal-title { font-size: 26px; margin: 4px 0 8px; }
-.sizzy-auth-hero .sizzy-modal-title em { font-family: var(--font-accent); color: var(--lime); font-weight: 400; }
-.sizzy-auth-hero .sizzy-modal-sub { margin: 0 auto; max-width: 340px; font-size: 14px; color: var(--text-muted); }
-.sizzy-auth-badge { width: 68px; height: 68px; margin: 0 auto 14px; border-radius: 24px; display: grid; place-items: center; color: #07080A; background: linear-gradient(145deg, #d9ff6e, var(--lime)); box-shadow: 0 12px 30px var(--lime-glow), inset 0 1px 1px rgba(255,255,255,.6); animation: sizzyBadgeFloat 4.5s ease-in-out infinite; }
-@keyframes sizzyBadgeFloat { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-5px) rotate(3deg); } }
-.sizzy-auth-card .sizzy-auth-hero > *, .sizzy-auth-card .sizzy-auth-field, .sizzy-auth-card .sizzy-auth-trust, .sizzy-auth-card .sizzy-auth-actions { opacity: 0; animation: sizzyRise .6s cubic-bezier(.16,1,.3,1) forwards; }
-.sizzy-modal-backdrop:not(.active) .sizzy-auth-card .sizzy-auth-hero > *, .sizzy-modal-backdrop:not(.active) .sizzy-auth-card .sizzy-auth-field, .sizzy-modal-backdrop:not(.active) .sizzy-auth-card .sizzy-auth-trust, .sizzy-modal-backdrop:not(.active) .sizzy-auth-card .sizzy-auth-actions { animation: none; }
-.sizzy-auth-hero > :nth-child(1) { animation-delay: .12s; } .sizzy-auth-hero > :nth-child(2) { animation-delay: .18s; } .sizzy-auth-hero > :nth-child(3) { animation-delay: .24s; }
-.sizzy-auth-field:nth-of-type(1) { animation-delay: .3s; } .sizzy-auth-field:nth-of-type(2) { animation-delay: .38s; }
-.sizzy-auth-trust { animation-delay: .46s; } .sizzy-auth-actions { animation-delay: .52s; }
 @keyframes sizzyRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-.sizzy-auth-opt { margin-left: 6px; font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: none; letter-spacing: 0; opacity: .8; }
-.sizzy-auth-input-wrap { position: relative; }
-.sizzy-auth-input-wrap > svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; transition: color .3s, transform .45s cubic-bezier(.34,1.56,.64,1); }
-.sizzy-auth-input-wrap .sizzy-input { padding-left: 46px; width: 100%; transition: border-color .3s, box-shadow .35s, background .3s, transform .35s cubic-bezier(.34,1.56,.64,1); }
-.sizzy-auth-input-wrap:focus-within > svg { color: var(--lime); transform: translateY(-50%) scale(1.15); }
-.sizzy-auth-input-wrap .sizzy-input:focus { box-shadow: 0 0 0 4px rgba(200,255,61,.16); transform: translateY(-1px); }
-.sizzy-auth-trust { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 18px 0 6px; }
-.sizzy-auth-trust span { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; color: var(--text-muted); padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.05); border: 1px solid var(--glass-border); }
-.sizzy-auth-trust i { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 8px var(--lime); animation: sizzyDotPulse 2s ease-in-out infinite; }
-.sizzy-auth-trust span:nth-child(2) i { animation-delay: .3s; } .sizzy-auth-trust span:nth-child(3) i { animation-delay: .6s; }
 @keyframes sizzyDotPulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.7); } }
-.sizzy-auth-actions { flex-direction: column; align-items: stretch; gap: 10px; margin-top: 18px; }
-.sizzy-auth-submit { width: 100%; min-height: 50px; font-size: 15px; }
-.sizzy-auth-secondary { display: flex; gap: 10px; }
-.sizzy-auth-secondary .sizzy-btn { flex: 1; }
-.sizzy-auth-card.shake { animation: sizzyShake .5s cubic-bezier(.36,.07,.19,.97) both; }
-@keyframes sizzyShake { 10%,90% { transform: translateX(-2px); } 20%,80% { transform: translateX(4px); } 30%,50%,70% { transform: translateX(-7px); } 40%,60% { transform: translateX(7px); } }
 
 /* ---- Toggles & non-button controls ---- */
 .sizzy-toolbar-checkbox .sizzy-checkbox-label { display: inline-flex; align-items: center; padding: 8px 16px 8px 10px; border-radius: 999px; border: 1px solid var(--glass-border); background: rgba(255,255,255,.05); position: relative; overflow: hidden; transition: transform .45s cubic-bezier(.34,1.56,.64,1), border-color .3s, background .3s, box-shadow .3s; user-select: none; }
@@ -2474,7 +2429,7 @@ a, label, summary, select, [role="button"] { -webkit-tap-highlight-color: transp
 .sizzy-home-av-stage #sizzy-home-av { width: min(250px, 70%); margin: 0 auto; flex: none; display: flex; align-items: center; justify-content: center; }
 .sizzy-home-av-stage #sizzy-home-av .sizzy-pixel-avatar-svg { display: block; width: 100%; height: auto; margin: 0 auto; }
 
-/* ---- Same you. Four sizes. (inside Live Sliders card) ---- */
+/* ---- Your size in S, M, L and XL (inside Live Sliders card) ---- */
 .sizzy-lab-fours { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--glass-border); }
 .sizzy-lab-fours .sizzy-card-title { margin: 0 0 14px; }
 .sizzy-lab-controls-card .sizzy-strip-row { grid-template-columns: repeat(4, 1fr); gap: 8px; }
@@ -2483,7 +2438,6 @@ a, label, summary, select, [role="button"] { -webkit-tap-highlight-color: transp
 .sizzy-lab-controls-card .sizzy-strip-item span { font-size: 11px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .sizzy-signin-pill, .sizzy-signin-pill::before, .sizzy-auth-badge, .sizzy-auth-card::before, .sizzy-auth-trust i { animation: none !important; }
   .sizzy-closet-ind { transition-duration: .01s; }
   .sizzy-closet-panel { animation: none; }
 }
@@ -2595,6 +2549,130 @@ a, label, summary, select, [role="button"] { -webkit-tap-highlight-color: transp
 .sizzy-dd-menu::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .sizzy-dd-check { display: none !important; }
 .sizzy-dd-item { justify-content: flex-start; }
+
+/* ==========================================================================
+   v14: quick size form, small link styles
+   ========================================================================== */
+.sizzy-quick-card { max-width: 640px; margin: 0 auto; padding: 32px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+.sizzy-quick-kick { font-size: 12px; font-weight: 700; letter-spacing: .18em; color: var(--lime); }
+.sizzy-quick-title { margin: 0 0 6px; font-size: clamp(24px, 4vw, 32px); line-height: 1.15; }
+.sizzy-quick-form { width: 100%; display: flex; flex-direction: column; gap: 20px; text-align: left; }
+.sizzy-quick-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.sizzy-quick-field { display: flex; flex-direction: column; gap: 8px; margin: 0; }
+.sizzy-quick-field > span { display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; }
+.sizzy-quick-field small { color: var(--text-muted); font-weight: 600; }
+.sizzy-quick-field .sizzy-input { width: 100%; }
+.sizzy-quick-builds { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.sizzy-quick-builds .sizzy-chip-btn { padding: 10px 4px; text-align: center; justify-content: center; }
+.sizzy-quick-builds .sizzy-chip-btn.on { background: var(--lime); color: #07080A; border-color: var(--lime); box-shadow: 0 6px 20px var(--lime-glow); }
+.sizzy-quick-err { min-height: 18px; font-size: 13px; color: #FF6A45; text-align: center; }
+.sizzy-quick-submit { width: 100%; justify-content: center; }
+.sizzy-lab-link { font-size: 14px; font-weight: 700; color: var(--lime); text-decoration: none; transition: transform .4s cubic-bezier(.34,1.56,.64,1); display: inline-block; }
+.sizzy-lab-link:hover { transform: translateX(4px); }
+@media (max-width: 560px) { .sizzy-quick-builds { grid-template-columns: repeat(3, minmax(0, 1fr)); } .sizzy-quick-card { padding: 24px 18px; } }
+
+/* ==========================================================================
+   v15: calmer, animated input focus + custom number stepper
+   ========================================================================== */
+.sizzy-input:focus, .sizzy-select:focus { outline: none; border-color: rgba(200,255,61,.5); background: rgba(18,22,28,.92);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.4), 0 0 0 4px rgba(200,255,61,.09), 0 10px 28px -12px rgba(200,255,61,.45); transform: translateY(-1px); }
+input:focus-visible, textarea:focus-visible, select:focus-visible { outline: none; }
+.sizzy-input { transition: border-color .35s ease, box-shadow .45s cubic-bezier(.16,1,.3,1), background .3s ease, transform .4s cubic-bezier(.34,1.56,.64,1); }
+
+.sizzy-num { position: relative; width: 100%; border-radius: 16px; }
+.sizzy-num .sizzy-input { padding-right: 52px; -moz-appearance: textfield; appearance: textfield; font-variant-numeric: tabular-nums; }
+.sizzy-num .sizzy-input::-webkit-outer-spin-button, .sizzy-num .sizzy-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+/* line that grows from the centre on focus */
+.sizzy-num-line { position: absolute; left: 18px; right: 18px; bottom: 0; height: 2px; border-radius: 2px; background: linear-gradient(90deg, transparent, var(--lime), transparent); transform: scaleX(0); opacity: 0; transform-origin: center; transition: transform .55s cubic-bezier(.16,1,.3,1), opacity .3s; pointer-events: none; }
+.sizzy-num:focus-within .sizzy-num-line { transform: scaleX(1); opacity: 1; }
+.sizzy-num-steps { position: absolute; top: 6px; bottom: 6px; right: 6px; width: 32px; display: flex; flex-direction: column; gap: 2px; opacity: .55; transition: opacity .3s; }
+.sizzy-num:hover .sizzy-num-steps, .sizzy-num:focus-within .sizzy-num-steps { opacity: 1; }
+.sizzy-num-btn { flex: 1; display: grid; place-items: center; border: 0; padding: 0; border-radius: 10px; background: rgba(255,255,255,.06); color: var(--text-muted); cursor: pointer; transition: background .25s, color .25s, transform .3s cubic-bezier(.34,1.56,.64,1); }
+.sizzy-num-btn:hover { background: rgba(200,255,61,.16); color: var(--lime); }
+.sizzy-num-btn.up:hover svg { transform: translateY(-1px); }
+.sizzy-num-btn.down:hover svg { transform: translateY(1px); }
+.sizzy-num-btn svg { transition: transform .25s cubic-bezier(.34,1.56,.64,1); }
+.sizzy-num-btn:active, .sizzy-num-btn.tap { transform: scale(.86); background: var(--lime); color: #07080A; }
+@media (prefers-reduced-motion: reduce) { .sizzy-num-line, .sizzy-input { transition: none; } .sizzy-input:focus { transform: none; } }
+
+
+/* ==========================================================================
+   Studio form: simplified layout, consistent spacing, photo sync
+   ========================================================================== */
+.sizzy-studio-form-col { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.sizzy-studio-form-col > .sizzy-card { padding: 24px; margin-bottom: 0; }
+.sizzy-studio-results-col { scroll-margin-top: 96px; }
+
+.sizzy-scan-card .sizzy-card-title { margin: 0 0 6px; }
+.sizzy-card-sub { margin: 0 0 18px; font-size: 13px; line-height: 1.5; color: var(--text-muted); }
+.sizzy-scan-drops { gap: 12px; margin-top: 0; }
+.sizzy-drop { aspect-ratio: 4 / 5; }
+.sizzy-drop span { display: flex; flex-direction: column; gap: 4px; padding: 0 8px; }
+.sizzy-drop b { font-size: 14px; color: var(--text-main); }
+.sizzy-drop small { font-size: 12px; font-weight: 500; }
+.sizzy-drop input { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+.sizzy-drop:focus-within { border-color: var(--lime); outline: 2px solid var(--lime); outline-offset: 2px; }
+.sizzy-scan-meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 16px 0 12px; font-size: 13px; color: var(--text-muted); }
+.sizzy-scan-meta b { color: var(--text-main); font-variant-numeric: tabular-nums; }
+.sizzy-scan-card .sizzy-scan-tip { margin: 14px 0 0; }
+#sizzy-scan-result:not(:empty) { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.08); }
+#sizzy-scan-result .sizzy-scan-err { margin: 0; }
+.sizzy-scan-synced { margin: 0 0 12px; font-size: 13px; font-weight: 700; color: var(--lime); text-align: center; }
+#sizzy-scan-result .sizzy-scan-metrics { margin: 0 0 4px; }
+.sizzy-scan-actions { display: flex; gap: 10px; margin-top: 16px; }
+.sizzy-scan-actions .sizzy-btn { flex: 1; }
+#sizzy-scan-go[disabled] { opacity: .6; cursor: progress; }
+
+.sizzy-form-card { display: flex; flex-direction: column; gap: 24px; }
+.sizzy-form-card .sizzy-field { margin: 0; gap: 10px; min-width: 0; }
+.sizzy-form-card .sizzy-field-label { margin: 0; }
+.sizzy-form-card .sizzy-form-row { gap: 16px; }
+.sizzy-form-card .sizzy-field-error { min-height: 0; margin: 0; }
+.sizzy-form-card .sizzy-field-error:empty { display: none; }
+.sizzy-form-card .sizzy-field-hint { margin: 0; line-height: 1.5; }
+.sizzy-form-card .sizzy-center { text-align: center; }
+.sizzy-form-card .sizzy-seg-btn { padding: 10px 6px; }
+.sizzy-form-card .sizzy-build-grid { gap: 8px; }
+.sizzy-form-card .sizzy-build-card { padding: 12px 4px 10px; min-height: 104px; gap: 2px; }
+.sizzy-form-card .sizzy-build-sub { line-height: 1.3; }
+.sizzy-form-card .sizzy-usual-row { gap: 14px; }
+.sizzy-form-card .sizzy-size-chips { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.sizzy-form-card .sizzy-size-chip { padding: 6px 0; min-width: 0; }
+
+.sizzy-form-card .sizzy-expandable-section { margin: 0; padding: 0; overflow: hidden; }
+.sizzy-form-card .sizzy-expandable-summary { padding: 16px 18px; min-height: 56px; gap: 12px; list-style: none; }
+.sizzy-form-card .sizzy-expandable-summary::-webkit-details-marker { display: none; }
+.sizzy-form-card .sizzy-expandable-summary::after { content: ""; flex: none; width: 8px; height: 8px; border-right: 2px solid var(--text-muted); border-bottom: 2px solid var(--text-muted); transform: rotate(45deg) translateY(-2px); transition: transform .2s ease; }
+.sizzy-form-card details[open] > .sizzy-expandable-summary::after { transform: rotate(-135deg) translateY(-2px); }
+.sizzy-form-card .sizzy-summary-title { flex: 1; min-width: 0; }
+.sizzy-form-card .sizzy-summary-badge { padding: 3px 10px; white-space: nowrap; }
+.sizzy-form-card .sizzy-badge-muted { color: var(--text-muted); background: rgba(255,255,255,.08); }
+.sizzy-form-card .sizzy-expandable-body { margin: 0; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.sizzy-form-card .sizzy-three-col { gap: 10px; }
+.sizzy-form-card .sizzy-three-col .sizzy-field-label { justify-content: flex-start; gap: 6px; }
+.sizzy-form-card .sizzy-three-col .sizzy-input { padding-left: 14px; padding-right: 40px; }
+.sizzy-form-card .sizzy-three-col .sizzy-num-steps { width: 26px; }
+
+.sizzy-form-actions { display: flex; flex-direction: column; gap: 12px; }
+
+@media (max-width: 560px) {
+  .sizzy-studio-form-col > .sizzy-card { padding: 20px 16px; }
+  .sizzy-form-card { gap: 22px; }
+  .sizzy-form-card .sizzy-form-row.sizzy-two-col { grid-template-columns: 1fr; }
+  .sizzy-form-card .sizzy-form-row.sizzy-two-col:nth-of-type(2) { grid-template-columns: 1fr 1fr; }
+  .sizzy-form-card .sizzy-three-col { grid-template-columns: 1fr; }
+  .sizzy-form-card .sizzy-build-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+  .sizzy-form-card .sizzy-build-sub { font-size: 9px; }
+}
+
+/* Home hero: breathing room between the form card and its two buttons */
+.sizzy-search-section .sizzy-hero-actions { margin-top: 32px; gap: 14px; }
+.sizzy-search-section .sizzy-hero-actions .sizzy-btn { white-space: nowrap; }
+@media (max-width: 560px) {
+  .sizzy-search-section .sizzy-hero-actions { flex-direction: column; align-items: stretch; margin-top: 24px; }
+  .sizzy-search-section .sizzy-hero-actions .sizzy-btn { width: 100%; }
+}
+
 </style>
 </head>
 <body>
@@ -2613,7 +2691,7 @@ a, label, summary, select, [role="button"] { -webkit-tap-highlight-color: transp
 
       <!-- Middle: Direct Navigation Links -->
       <ul class="sizzy-nav-links" id="sizzy-nav-links">
-        <li><a href="#/studio" class="sizzy-nav-link">Studio</a></li>
+        <li><a href="#/studio" class="sizzy-nav-link">Find My Size</a></li>
         <li><a href="#/catalog" class="sizzy-nav-link">Catalog</a></li>
         <li><a href="#/lab" class="sizzy-nav-link">Fit Lab</a></li>
         <li><a href="#/closet" class="sizzy-nav-link">My Closet</a></li>
@@ -2638,51 +2716,6 @@ a, label, summary, select, [role="button"] { -webkit-tap-highlight-color: transp
   <main id="sizzy-app-root" class="sizzy-main-container" role="main">
     <!-- Populated dynamically by app.js -->
   </main>
-
-  <!-- Local Profile Sign-In Modal -->
-  <div id="sizzy-auth-modal" class="sizzy-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="sizzy-auth-title">
-    <div class="sizzy-modal-card sizzy-auth-card">
-      <button type="button" class="sizzy-modal-close sizzy-auth-x" aria-label="Close dialog">&times;</button>
-      <div class="sizzy-auth-hero">
-        <div class="sizzy-auth-badge" aria-hidden="true">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
-        </div>
-        <h2 id="sizzy-auth-title" class="sizzy-modal-title">Sign in to <em>Sizzy</em></h2>
-        <p class="sizzy-modal-sub">Create a profile in seconds. It lives on this device only, with no account, no server and no tracking.</p>
-      </div>
-
-      <form id="sizzy-auth-form" class="sizzy-modal-form" novalidate>
-        <div class="sizzy-field sizzy-auth-field">
-          <label for="sizzy-auth-name" class="sizzy-field-label">Your name or nickname</label>
-          <div class="sizzy-auth-input-wrap">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
-            <input type="text" id="sizzy-auth-name" class="sizzy-input" placeholder="e.g. Kabir" autocomplete="nickname" required>
-          </div>
-        </div>
-
-        <div class="sizzy-field sizzy-auth-field">
-          <label for="sizzy-auth-email" class="sizzy-field-label">Email <span class="sizzy-auth-opt">optional backup</span></label>
-          <div class="sizzy-auth-input-wrap">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 8l9 6 9-6"/></svg>
-            <input type="email" id="sizzy-auth-email" class="sizzy-input" placeholder="e.g. kabir@example.com" autocomplete="email">
-          </div>
-          <span class="sizzy-field-hint">Never sent anywhere. Only used to label exported files.</span>
-        </div>
-
-        <div class="sizzy-auth-trust">
-          <span><i></i>On-device only</span><span><i></i>No account</span><span><i></i>No tracking</span>
-        </div>
-
-        <div class="sizzy-modal-actions sizzy-auth-actions">
-          <button type="submit" class="sizzy-btn sizzy-btn-primary sizzy-auth-submit">Save Profile</button>
-          <div class="sizzy-auth-secondary">
-            <button type="button" id="sizzy-signout-btn" class="sizzy-btn sizzy-btn-ghost" style="display:none;">Sign out</button>
-            <button type="button" class="sizzy-btn sizzy-btn-ghost sizzy-modal-close">Cancel</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
 
   <!-- FAQ Slide-over Drawer -->
   <aside id="sizzy-faq-drawer" class="sizzy-drawer" role="complementary" aria-label="FAQ Panel">
@@ -3290,81 +3323,7 @@ window.SIZZY_DATA = (function () {
     }
   ];
 
-  // Sample Reviews for Community
-  const SAMPLE_REVIEWS = [
-    { id: 'rev_n0', isSample: true, userName: 'Meera S.', userBuild: 'SLIM', userHeight: '158 cm', userWeight: '46 kg', brand: 'hm', brandName: 'H&M', itemTitle: 'Relaxed Fit Graphic Minimal Tee', recommendedSize: 'S', verdict: 'Just right', boughtSize: 'S', comment: 'Between XS and S forever. S gave me the relaxed drape I wanted, no tent.', date: '5 days ago' },
-    { id: 'rev_n1', isSample: true, userName: 'Vikram J.', userBuild: 'BROAD', userHeight: '184 cm', userWeight: '92 kg', brand: 'snitch', brandName: 'Snitch', itemTitle: 'Old Money Striped Relaxed Camp Shirt', recommendedSize: 'L', verdict: 'Just right', boughtSize: 'L', comment: 'Camp shirts usually pull at my shoulders. L sat flat and the boxy hem looked intentional.', date: '1 week ago' },
-    { id: 'rev_n2', isSample: true, userName: 'Isha P.', userBuild: 'AVERAGE', userHeight: '165 cm', userWeight: '58 kg', brand: 'uniqlo', brandName: 'Uniqlo', itemTitle: 'AIRism Cotton Crew Neck Oversized Half-Sleeve Tee', recommendedSize: 'S', verdict: 'Just right', boughtSize: 'S', comment: 'Sizzy said go down to S for the oversized cut. It was exactly the vibe, saved me a return.', date: '1 week ago' },
-    { id: 'rev_n3', isSample: true, userName: 'Dev K.', userBuild: 'ATHLETIC', userHeight: '175 cm', userWeight: '74 kg', brand: 'bewakoof', brandName: 'Bewakoof', itemTitle: 'Heavy Duty 240 GSM Boxy Streetwear Tee', recommendedSize: 'M', verdict: 'Just right', boughtSize: 'M', comment: 'Heavy fabric, boxy fit, M is perfect. Would have ordered L and regretted it.', date: '2 weeks ago' },
-    { id: 'rev_n4', isSample: true, userName: 'Sana H.', userBuild: 'AVERAGE', userHeight: '162 cm', userWeight: '55 kg', brand: 'levis', brandName: "Levi's", itemTitle: 'Original Housemark Classic Fit Cotton Tee', recommendedSize: 'S', verdict: 'Slightly loose', boughtSize: 'S', comment: 'Fits fine, a touch roomy in the body. Nudged my Levi’s calibration by 1 cm.', date: '2 weeks ago' },
-    { id: 'rev_n5', isSample: true, userName: 'Rahul T.', userBuild: 'BIGGER', userHeight: '178 cm', userWeight: '98 kg', brand: 'hm', brandName: 'H&M', itemTitle: 'Regular Fit Linen-Blend Resort Shirt', recommendedSize: 'XL', verdict: 'Just right', boughtSize: 'XL', comment: 'First time a shirt buttons without pulling across the chest. XL, done.', date: '3 weeks ago' },
-    { id: 'rev_n6', isSample: true, userName: 'Tara N.', userBuild: 'SLIM', userHeight: '168 cm', userWeight: '52 kg', brand: 'zara', brandName: 'Zara', itemTitle: 'Textured Knit Cuban Collar Shirt', recommendedSize: 'S', verdict: 'Just right', boughtSize: 'S', comment: 'Knit shirts run wide on me. S was clean on the shoulders and still relaxed.', date: '3 weeks ago' },
-    { id: 'rev_n7', isSample: true, userName: 'Arjun V.', userBuild: 'AVERAGE', userHeight: '170 cm', userWeight: '68 kg', brand: 'levis', brandName: "Levi's", itemTitle: 'Sunset 1-Pocket Regular Fit Denim Shirt', recommendedSize: 'M', verdict: 'Slightly snug', boughtSize: 'M', comment: 'Snug on the arms, fine everywhere else. I would try L next time with layers.', date: '1 month ago' },
-    {
-      id: 'rev_1',
-      isSample: true,
-      userName: 'Aarav M.',
-      userBuild: 'ATHLETIC',
-      userHeight: '178 cm',
-      userWeight: '73 kg',
-      brand: 'zara',
-      brandName: 'Zara',
-      itemTitle: 'Heavyweight Boxy Drop-Shoulder Tee',
-      recommendedSize: 'M',
-      verdict: 'Just right',
-      boughtSize: 'M',
-      comment: 'Sizzy recommended M even though I normally buy L in Indian brands. Fits clean around the neck with the right oversized drape on the shoulders.',
-      date: '2 days ago'
-    },
-    {
-      id: 'rev_2',
-      isSample: true,
-      userName: 'Diya K.',
-      userBuild: 'SLIM',
-      userHeight: '164 cm',
-      userWeight: '51 kg',
-      brand: 'hm',
-      brandName: 'H&M',
-      itemTitle: 'Relaxed Fit Graphic Minimal Tee',
-      recommendedSize: 'S',
-      verdict: 'Just right',
-      boughtSize: 'S',
-      comment: 'Usually stuck guessing between XS and S. S fit comfortably relaxed without looking like I borrowed my brother’s shirt.',
-      date: '4 days ago'
-    },
-    {
-      id: 'rev_3',
-      isSample: true,
-      userName: 'Rohan S.',
-      userBuild: 'BROAD',
-      userHeight: '182 cm',
-      userWeight: '88 kg',
-      brand: 'uniqlo',
-      brandName: 'Uniqlo',
-      itemTitle: 'Oxford Pure Cotton Button-Down Shirt',
-      recommendedSize: 'XL',
-      verdict: 'Just right',
-      boughtSize: 'XL',
-      comment: 'Broad shoulders usually cause buttons to pull in front. The XL chart conversion accounted for chest ease perfectly. No chest gaping!',
-      date: '1 week ago'
-    },
-    {
-      id: 'rev_4',
-      isSample: true,
-      userName: 'Kabir B.',
-      userBuild: 'AVERAGE',
-      userHeight: '172 cm',
-      userWeight: '66 kg',
-      brand: 'snitch',
-      brandName: 'Snitch',
-      itemTitle: 'Vintage Washed Acid Drop-Shoulder Tee',
-      recommendedSize: 'M',
-      verdict: 'Just right',
-      boughtSize: 'M',
-      comment: 'Snitch oversized tees are truly baggy. Sizzy correctly told me M was already +12 cm ease so I did not need to size up.',
-      date: '2 weeks ago'
-    }
-  ];
+
 
   // FAQ items
   const FAQ_ITEMS = [
@@ -3541,7 +3500,6 @@ window.SIZZY_DATA = (function () {
     BRANDS,
     DEFAULT_CHARTS,
     DEMO_PRODUCTS,
-    SAMPLE_REVIEWS,
     FAQ_ITEMS
   };
 })();
@@ -4001,6 +3959,7 @@ window.SIZZY_DATA = (function () {
   };
 
   window.SIZZY_RUN_TESTS = () => SizzyEngine.runSelfTests();
+  window.SizzyEngine = SizzyEngine;
 
   /* ==========================================================================
      3. SMART SEARCH KEYWORD PARSER (No AI, No Network)
@@ -4738,8 +4697,7 @@ BOTTOMS: {
       window.addEventListener('hashchange', () => this.handleRoute());
       this.bindGlobalEvents();
       const rootEl = document.getElementById('sizzy-app-root');
-      if (rootEl) { new MutationObserver(() => this.enhanceSelects(rootEl)).observe(rootEl, { childList: true, subtree: true }); this.enhanceSelects(rootEl); }
-      this.refreshAuthPill();
+      if (rootEl) { new MutationObserver(() => { this.enhanceSelects(rootEl); this.enhanceNumbers(rootEl); }).observe(rootEl, { childList: true, subtree: true }); this.enhanceSelects(rootEl); this.enhanceNumbers(rootEl); }
       this.handleRoute();
     },
 
@@ -4772,9 +4730,10 @@ BOTTOMS: {
       this.compareIds = Storage.get(Storage.KEYS.COMPARE, []);
     },
 
-    saveProfile(newValues) {
+    saveProfile(newValues, quiet) {
       this.profile = { ...this.profile, ...newValues, savedAt: new Date().toISOString() };
       Storage.set(Storage.KEYS.PROFILE, this.profile);
+      if (quiet) return;
 
       const history = Storage.get(Storage.KEYS.PROFILE_HISTORY, []);
       history.unshift({
@@ -4824,12 +4783,6 @@ BOTTOMS: {
             break;
           case '#/closet':
             this.renderClosetView(appContainer);
-            break;
-          case '#/brands':
-            this.renderBrandsView(appContainer);
-            break;
-          case '#/community':
-            this.renderHomeView(appContainer);
             break;
           case '#/compare':
             this.renderCompareView(appContainer);
@@ -4928,11 +4881,6 @@ BOTTOMS: {
           if (navLinksGroup) navLinksGroup.classList.remove('open');
         });
       });
-
-      const signInBtn = document.getElementById('sizzy-signin-btn');
-      if (signInBtn) {
-        signInBtn.addEventListener('click', () => this.openAuthModal());
-      }
 
       const helpBtn = document.getElementById('sizzy-help-btn');
       if (helpBtn) {
@@ -5071,41 +5019,31 @@ BOTTOMS: {
             </div>
           </div>
 
-          <!-- Smart Search Box -->
+          <!-- Quick size form: the whole product in one screen -->
           <section class="sizzy-search-section rv">
-            <div class="sizzy-search-card">
-              <label for="sizzy-home-search-input" class="sizzy-search-label">
-                Smart Search <span class="sizzy-badge-chip">Keyword Parser</span>
-              </label>
-              <form id="sizzy-home-search-form" class="sizzy-search-input-row">
-                <input type="text" id="sizzy-home-search-input" class="sizzy-search-input" 
-                       placeholder="e.g. black oversized tee under 1500 for men" autocomplete="off">
-                <button type="submit" class="sizzy-btn sizzy-btn-primary sizzy-search-btn">
-                  <span>Search</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </button>
+            <div class="sizzy-search-card sizzy-quick-card">
+              <span class="sizzy-quick-kick">FIND MY SIZE</span>
+              <h2 class="sizzy-quick-title">Your size at every brand, in 10 seconds</h2>
+              <form id="sizzy-quick-form" class="sizzy-quick-form" novalidate>
+                <div class="sizzy-quick-row">
+                  <label class="sizzy-quick-field"><span>Height <small>cm</small></span>
+                    <input type="number" id="sizzy-quick-h" class="sizzy-input" min="120" max="220" inputmode="numeric" placeholder="176" value="${this.profile.heightCm || ''}"></label>
+                  <label class="sizzy-quick-field"><span>Weight <small>kg</small></span>
+                    <input type="number" id="sizzy-quick-w" class="sizzy-input" min="30" max="200" inputmode="numeric" placeholder="72" value="${this.profile.weightKg || ''}"></label>
+                </div>
+                <div class="sizzy-quick-field"><span>Build</span>
+                  <div class="sizzy-quick-builds" id="sizzy-quick-builds" role="group" aria-label="Body build">
+                    ${['slim','average','athletic','broad','bigger'].map(k => `<button type="button" class="sizzy-chip-btn ${this.profile.build === k ? 'on' : ''}" data-build="${k}" aria-pressed="${this.profile.build === k}">${k[0].toUpperCase() + k.slice(1)}</button>`).join('')}
+                  </div>
+                </div>
+                <div id="sizzy-quick-err" class="sizzy-quick-err" aria-live="polite"></div>
+                <button type="submit" class="sizzy-btn sizzy-btn-primary sizzy-btn-large sizzy-quick-submit">See my sizes <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
               </form>
-              <div id="sizzy-search-feedback" class="sizzy-search-feedback" aria-live="polite"></div>
-
-              <div class="sizzy-starter-chips">
-                <span class="sizzy-chips-label">Quick filters:</span>
-                <button type="button" class="sizzy-chip-btn" data-search="I wear Zara M">"I wear Zara M"</button>
-                <button type="button" class="sizzy-chip-btn" data-search="black oversized tee under 1500 for men">Black oversized tee</button>
-                <button type="button" class="sizzy-chip-btn" data-search="formal oxford shirt under 2500 for men">Formal oxford shirt</button>
-                <button type="button" class="sizzy-chip-btn" data-search="full sleeve tee under 1500">Full sleeve tee</button>
-                <button type="button" class="sizzy-chip-btn" data-search="baggy jeans under 2500">Baggy jeans</button>
-                <button type="button" class="sizzy-chip-btn" data-search="hoodie under 2500">Hoodies</button>
-                <button type="button" class="sizzy-chip-btn" data-search="shorts under 1000">Shorts under 1000</button>
-                <button type="button" class="sizzy-chip-btn" data-search="cargo pants">Cargo pants</button>
-                <button type="button" class="sizzy-chip-btn" data-search="denim jacket">Denim jacket</button>
-                <button type="button" class="sizzy-chip-btn" data-search="pleated skirt for women">Pleated skirt</button>
-                <button type="button" class="sizzy-chip-btn" data-search="white polo for men">White polo</button>
-              </div>
             </div>
 
             <div class="sizzy-hero-actions">
               <a href="#/studio" class="sizzy-btn sizzy-btn-primary sizzy-btn-large">
-                Open Size Studio &rarr;
+                Open full Studio &rarr;
               </a>
               <a href="#/catalog" class="sizzy-btn sizzy-btn-secondary sizzy-btn-large">
                 Explore Catalog (${allItems.length} items)
@@ -5406,6 +5344,27 @@ BOTTOMS: {
     },
 
     bindHomeEvents(container) {
+      const quick = container.querySelector('#sizzy-quick-form');
+      if (quick) {
+        let build = this.profile.build || 'average';
+        const builds = quick.querySelector('#sizzy-quick-builds');
+        builds.addEventListener('click', (e) => {
+          const b = e.target.closest('[data-build]'); if (!b) return;
+          build = b.dataset.build;
+          builds.querySelectorAll('[data-build]').forEach(x => { const on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on); });
+        });
+        quick.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const H = parseFloat(quick.querySelector('#sizzy-quick-h').value);
+          const W = parseFloat(quick.querySelector('#sizzy-quick-w').value);
+          const err = quick.querySelector('#sizzy-quick-err');
+          if (!(H >= 120 && H <= 220)) { err.textContent = 'Enter your height between 120 and 220 cm.'; return; }
+          if (!(W >= 30 && W <= 200)) { err.textContent = 'Enter your weight between 30 and 200 kg.'; return; }
+          err.textContent = '';
+          this.saveProfile({ heightCm: Math.round(H), weightKg: Math.round(W), build });
+          window.location.hash = '#/studio';
+        });
+      }
       const searchForm = container.querySelector('#sizzy-home-search-form');
       const searchInput = container.querySelector('#sizzy-home-search-input');
       const searchFeedback = container.querySelector('#sizzy-search-feedback');
@@ -5483,28 +5442,29 @@ BOTTOMS: {
             <div class="sizzy-studio-form-col">
               <div class="sizzy-card sizzy-scan-card" id="sizzy-scan-card">
                 <h3 class="sizzy-card-title">Estimate from photos</h3>
+                <p class="sizzy-card-sub">Add a front photo. A back photo is optional but steadier. Sizes update automatically.</p>
                 <div class="sizzy-scan-drops">
-                  <label class="sizzy-drop" id="sizzy-drop-front"><input type="file" accept="image/*" id="sizzy-scan-front" hidden><span>+ Front photo</span></label>
-                  <label class="sizzy-drop" id="sizzy-drop-back"><input type="file" accept="image/*" id="sizzy-scan-back" hidden><span>+ Back photo</span></label>
+                  <label class="sizzy-drop" id="sizzy-drop-front"><input type="file" accept="image/*" id="sizzy-scan-front" aria-label="Front photo"><span><b>Front photo</b><small>Required</small></span></label>
+                  <label class="sizzy-drop" id="sizzy-drop-back"><input type="file" accept="image/*" id="sizzy-scan-back" aria-label="Back photo"><span><b>Back photo</b><small>Optional</small></span></label>
                 </div>
-                <div class="sizzy-field" style="margin:14px 0 12px;"><label class="sizzy-field-label">Your height <span class="sizzy-unit-tag">cm</span></label><input type="number" id="sizzy-scan-height" class="sizzy-input" value="${p.heightCm}" min="120" max="220"></div>
+                <div class="sizzy-scan-meta"><span>Scaled to your height</span><b id="sizzy-scan-height-note">${p.heightCm} cm</b></div>
                 <button type="button" class="sizzy-btn sizzy-btn-primary sizzy-btn-block" id="sizzy-scan-go">Estimate my size</button>
+                <div id="sizzy-scan-result" aria-live="polite"></div>
                 <p class="sizzy-scan-tip">Full body, plain wall, fitted clothes, arms slightly out. Photos stay on your device.</p>
-                <div id="sizzy-scan-result"></div>
               </div>
+
               <form id="sizzy-studio-form" class="sizzy-card sizzy-form-card" novalidate>
                 <div class="sizzy-form-row sizzy-two-col">
                   <div class="sizzy-field">
-                    <label class="sizzy-field-label">Gender Profile</label>
+                    <label class="sizzy-field-label">Fits for</label>
                     <div class="sizzy-segmented-control" id="sizzy-gender-toggle">
                       <button type="button" class="sizzy-seg-btn ${p.gender === 'men' ? 'active' : ''}" data-val="men">Male</button>
                       <button type="button" class="sizzy-seg-btn ${p.gender === 'women' ? 'active' : ''}" data-val="women">Female</button>
                       <button type="button" class="sizzy-seg-btn ${p.gender === 'unisex' ? 'active' : ''}" data-val="unisex">Unisex</button>
                     </div>
                   </div>
-
                   <div class="sizzy-field">
-                    <label class="sizzy-field-label">Unit System</label>
+                    <label class="sizzy-field-label">Units</label>
                     <div class="sizzy-segmented-control" id="sizzy-unit-toggle">
                       <button type="button" class="sizzy-seg-btn ${!isFtLb ? 'active' : ''}" data-val="cm">cm / kg</button>
                       <button type="button" class="sizzy-seg-btn ${isFtLb ? 'active' : ''}" data-val="in">in / lb</button>
@@ -5514,29 +5474,24 @@ BOTTOMS: {
 
                 <div class="sizzy-form-row sizzy-two-col">
                   <div class="sizzy-field">
-                    <label for="sizzy-input-height" class="sizzy-field-label">
-                      Height <span class="sizzy-unit-tag">${isFtLb ? 'inches' : 'cm'}</span>
-                    </label>
-                    <input type="number" id="sizzy-input-height" class="sizzy-input" 
+                    <label for="sizzy-input-height" class="sizzy-field-label">Height <span class="sizzy-unit-tag" id="sizzy-h-unit">${isFtLb ? 'in' : 'cm'}</span></label>
+                    <input type="number" id="sizzy-input-height" class="sizzy-input" inputmode="decimal"
                            value="${displayHeight}" min="${isFtLb ? 47 : 120}" max="${isFtLb ? 87 : 220}" required>
                     <span id="sizzy-height-error" class="sizzy-field-error" aria-live="polite"></span>
                   </div>
-
                   <div class="sizzy-field">
-                    <label for="sizzy-input-weight" class="sizzy-field-label">
-                      Weight <span class="sizzy-unit-tag">${isFtLb ? 'lb' : 'kg'}</span>
-                    </label>
-                    <input type="number" id="sizzy-input-weight" class="sizzy-input" 
+                    <label for="sizzy-input-weight" class="sizzy-field-label">Weight <span class="sizzy-unit-tag" id="sizzy-w-unit">${isFtLb ? 'lb' : 'kg'}</span></label>
+                    <input type="number" id="sizzy-input-weight" class="sizzy-input" inputmode="decimal"
                            value="${displayWeight}" min="${isFtLb ? 66 : 30}" max="${isFtLb ? 440 : 200}" required>
                     <span id="sizzy-weight-error" class="sizzy-field-error" aria-live="polite"></span>
                   </div>
                 </div>
 
                 <div class="sizzy-field">
-                  <label class="sizzy-field-label">Body Build Silhouette</label>
+                  <label class="sizzy-field-label">Body build</label>
                   <div class="sizzy-build-grid" id="sizzy-build-picker">
                     ${this.renderBuildCard('slim', 'Slim', '-2 cm chest', p.build === 'slim')}
-                    ${this.renderBuildCard('average', 'Average', 'Standard cut', p.build === 'average')}
+                    ${this.renderBuildCard('average', 'Average', 'Standard', p.build === 'average')}
                     ${this.renderBuildCard('athletic', 'Athletic', '+3 cm chest', p.build === 'athletic')}
                     ${this.renderBuildCard('broad', 'Broad', '+5 cm chest', p.build === 'broad')}
                     ${this.renderBuildCard('bigger', 'Bigger', '+8 cm chest', p.build === 'bigger')}
@@ -5544,26 +5499,7 @@ BOTTOMS: {
                 </div>
 
                 <div class="sizzy-field">
-                  <label class="sizzy-field-label">Usual Size Shortcut (Optional)</label>
-                  <p class="sizzy-field-hint">"My Zara M fits me" shortcut — blends 50/50 with that brand's midpoint.</p>
-                  <div class="sizzy-usual-row">
-                    <select id="sizzy-usual-brand" class="sizzy-select">
-                      <option value="">None / Custom</option>
-                      ${window.SIZZY_DATA.BRANDS.filter(b => b.hasActiveChart).map(b => `
-                        <option value="${b.id}" ${p.usualBrand === b.id ? 'selected' : ''}>${b.name}</option>
-                      `).join('')}
-                    </select>
-
-                    <div class="sizzy-size-chips" id="sizzy-usual-size-chips">
-                      ${['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL'].map(sz => `
-                        <button type="button" class="sizzy-size-chip ${p.usualSize === sz ? 'active' : ''}" data-size="${sz}">${sz}</button>
-                      `).join('')}
-                    </div>
-                  </div>
-                </div>
-
-                <div class="sizzy-field">
-                  <label class="sizzy-field-label">Fit Preference</label>
+                  <label class="sizzy-field-label">Fit preference</label>
                   <div class="sizzy-segmented-control" id="sizzy-fit-pref-toggle">
                     <button type="button" class="sizzy-seg-btn ${p.fitPreference === 'slim' ? 'active' : ''}" data-val="slim">Slim</button>
                     <button type="button" class="sizzy-seg-btn ${p.fitPreference === 'regular' ? 'active' : ''}" data-val="regular">Regular</button>
@@ -5571,33 +5507,56 @@ BOTTOMS: {
                   </div>
                 </div>
 
-                <details class="sizzy-expandable-section" ${p.manualChest || p.manualWaist || p.manualShoulder ? 'open' : ''}>
+                <details class="sizzy-expandable-section" id="sizzy-usual-details" ${p.usualBrand ? 'open' : ''}>
                   <summary class="sizzy-expandable-summary">
-                    <span>Most accurate: add my tape measurements</span>
-                    <span class="sizzy-summary-badge">Overrides estimate</span>
+                    <span class="sizzy-summary-title">Know your size at a brand?</span>
+                    <span class="sizzy-summary-badge sizzy-badge-muted">Optional</span>
                   </summary>
                   <div class="sizzy-expandable-body">
-                    <div class="sizzy-three-col">
-                      <div class="sizzy-field">
-                        <label class="sizzy-field-label">Chest <span class="sizzy-unit-tag">cm</span></label>
-                        <input type="number" id="sizzy-manual-chest" class="sizzy-input" placeholder="e.g. 97" value="${p.manualChest || ''}">
+                    <div class="sizzy-usual-row">
+                      <select id="sizzy-usual-brand" class="sizzy-select" aria-label="Brand">
+                        <option value="">None</option>
+                        ${window.SIZZY_DATA.BRANDS.filter(b => b.hasActiveChart).map(b => `
+                          <option value="${b.id}" ${p.usualBrand === b.id ? 'selected' : ''}>${b.name}</option>
+                        `).join('')}
+                      </select>
+                      <div class="sizzy-size-chips" id="sizzy-usual-size-chips">
+                        ${['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL'].map(sz => `
+                          <button type="button" class="sizzy-size-chip ${p.usualSize === sz ? 'active' : ''}" data-size="${sz}">${sz}</button>
+                        `).join('')}
                       </div>
-                      <div class="sizzy-field">
-                        <label class="sizzy-field-label">Waist <span class="sizzy-unit-tag">cm</span></label>
-                        <input type="number" id="sizzy-manual-waist" class="sizzy-input" placeholder="e.g. 82" value="${p.manualWaist || ''}">
-                      </div>
-                      <div class="sizzy-field">
-                        <label class="sizzy-field-label">Shoulder <span class="sizzy-unit-tag">cm</span></label>
-                        <input type="number" id="sizzy-manual-shoulder" class="sizzy-input" placeholder="e.g. 45" value="${p.manualShoulder || ''}">
-                      </div>
+                      <p class="sizzy-field-hint">Blended 50/50 with that brand's size chart.</p>
                     </div>
                   </div>
                 </details>
 
+                <details class="sizzy-expandable-section" id="sizzy-tape-details" ${p.manualChest || p.manualWaist || p.manualShoulder ? 'open' : ''}>
+                  <summary class="sizzy-expandable-summary">
+                    <span class="sizzy-summary-title">Add tape measurements</span>
+                    <span class="sizzy-summary-badge" id="sizzy-tape-badge">${p.measuredFrom === 'photos' ? 'From photos' : 'Most accurate'}</span>
+                  </summary>
+                  <div class="sizzy-expandable-body">
+                    <div class="sizzy-three-col">
+                      <div class="sizzy-field">
+                        <label for="sizzy-manual-chest" class="sizzy-field-label">Chest <span class="sizzy-unit-tag">cm</span></label>
+                        <input type="number" id="sizzy-manual-chest" class="sizzy-input" inputmode="decimal" placeholder="97" value="${p.manualChest || ''}">
+                      </div>
+                      <div class="sizzy-field">
+                        <label for="sizzy-manual-waist" class="sizzy-field-label">Waist <span class="sizzy-unit-tag">cm</span></label>
+                        <input type="number" id="sizzy-manual-waist" class="sizzy-input" inputmode="decimal" placeholder="82" value="${p.manualWaist || ''}">
+                      </div>
+                      <div class="sizzy-field">
+                        <label for="sizzy-manual-shoulder" class="sizzy-field-label">Shoulder <span class="sizzy-unit-tag">cm</span></label>
+                        <input type="number" id="sizzy-manual-shoulder" class="sizzy-input" inputmode="decimal" placeholder="45" value="${p.manualShoulder || ''}">
+                      </div>
+                    </div>
+                    <p class="sizzy-field-hint">These replace the estimate for chest, waist and shoulder.</p>
+                  </div>
+                </details>
+
                 <div class="sizzy-form-actions">
-                  <button type="submit" class="sizzy-btn sizzy-btn-primary sizzy-btn-block">
-                    Update Measurements & Sizing
-                  </button>
+                  <button type="submit" class="sizzy-btn sizzy-btn-primary sizzy-btn-block">See my sizes</button>
+                  <p class="sizzy-field-hint sizzy-center">Everything updates as you type and saves on this device.</p>
                 </div>
               </form>
             </div>
@@ -5631,10 +5590,11 @@ BOTTOMS: {
 
               <div class="sizzy-brand-results-section">
                 <div class="sizzy-results-control-row">
-                  <h2 class="sizzy-section-title">Brand Size Recommendations</h2>
+                  <h2 class="sizzy-section-title">Your size at every brand</h2>
                   <button type="button" id="sizzy-toggle-all-brands-btn" class="sizzy-btn-text">
                     Show all brands
                   </button>
+                  <a href="#/lab" class="sizzy-lab-link">See it on your avatar &rarr;</a>
                 </div>
 
                 <div id="sizzy-brand-cards-container" class="sizzy-brand-cards-grid"></div>
@@ -5736,37 +5696,120 @@ BOTTOMS: {
       c.strokeStyle = '#5BB8FF'; c.strokeRect(1, r.top * sy, W - 2, (r.bottom - r.top) * sy);
     },
 
+    getStudioHeightCm(container) {
+      const el = container.querySelector('#sizzy-input-height');
+      const v = el ? parseFloat(el.value) : NaN;
+      const cm = this.profile.unit === 'in' ? v * 2.54 : v;
+      return (cm >= 120 && cm <= 220) ? cm : this.profile.heightCm;
+    },
+
+    /* Push the saved profile back into every control, without re-rendering (keeps photo previews) */
+    syncStudioForm(container) {
+      const p = this.profile;
+      const ft = p.unit === 'in';
+      const $ = (sel) => container.querySelector(sel);
+      const setVal = (sel, v) => { const el = $(sel); if (el) el.value = v; };
+      const on = (sel, attr, val) => container.querySelectorAll(sel).forEach(el => el.classList.toggle('active', el.getAttribute(attr) === String(val)));
+
+      const h = $('#sizzy-input-height'), w = $('#sizzy-input-weight');
+      if (h) { h.min = ft ? 47 : 120; h.max = ft ? 87 : 220; h.value = ft ? Math.round(p.heightCm / 2.54) : p.heightCm; }
+      if (w) { w.min = ft ? 66 : 30; w.max = ft ? 440 : 200; w.value = ft ? Math.round(p.weightKg * 2.20462) : p.weightKg; }
+      const hu = $('#sizzy-h-unit'), wu = $('#sizzy-w-unit');
+      if (hu) hu.textContent = ft ? 'in' : 'cm';
+      if (wu) wu.textContent = ft ? 'lb' : 'kg';
+      setVal('#sizzy-manual-chest', p.manualChest || '');
+      setVal('#sizzy-manual-waist', p.manualWaist || '');
+      setVal('#sizzy-manual-shoulder', p.manualShoulder || '');
+      setVal('#sizzy-usual-brand', p.usualBrand || '');
+
+      on('#sizzy-gender-toggle .sizzy-seg-btn', 'data-val', p.gender);
+      on('#sizzy-unit-toggle .sizzy-seg-btn', 'data-val', ft ? 'in' : 'cm');
+      on('#sizzy-fit-pref-toggle .sizzy-seg-btn', 'data-val', p.fitPreference);
+      on('.sizzy-build-card', 'data-build', p.build);
+      on('#sizzy-usual-size-chips .sizzy-size-chip', 'data-size', p.usualSize);
+
+      const hasManual = p.manualChest || p.manualWaist || p.manualShoulder;
+      const tape = $('#sizzy-tape-details');
+      if (tape && hasManual) tape.open = true;
+      const badge = $('#sizzy-tape-badge');
+      if (badge) badge.textContent = p.measuredFrom === 'photos' ? 'From photos' : 'Most accurate';
+      const note = $('#sizzy-scan-height-note');
+      if (note) note.textContent = Math.round(p.heightCm) + ' cm';
+      ['#sizzy-height-error', '#sizzy-weight-error'].forEach(sel => { const e = $(sel); if (e) e.textContent = ''; });
+    },
+
+    scrollToStudioResults(container) {
+      const col = container.querySelector('.sizzy-studio-results-col');
+      if (col && window.innerWidth <= 1024) col.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    },
+
     bindScanEvents(container) {
       const card = container.querySelector('#sizzy-scan-card');
       if (!card) return;
       const files = { front: null, back: null };
       const drops = { front: card.querySelector('#sizzy-drop-front'), back: card.querySelector('#sizzy-drop-back') };
+      const res = card.querySelector('#sizzy-scan-result');
+      const go = card.querySelector('#sizzy-scan-go');
+
       ['front', 'back'].forEach(k => {
         card.querySelector('#sizzy-scan-' + k).addEventListener('change', (e) => {
           const f = e.target.files[0];
           if (!f) return;
           const img = new Image();
-          img.onload = () => { files[k] = img; this.drawScanPreview(drops[k], img, null); };
+          img.onload = () => { files[k] = img; this.drawScanPreview(drops[k], img, null); res.innerHTML = ''; };
+          img.onerror = () => { res.innerHTML = '<p class="sizzy-scan-err">That file could not be read. Try a JPG or PNG.</p>'; };
           img.src = URL.createObjectURL(f);
         });
       });
-      card.querySelector('#sizzy-scan-go').addEventListener('click', () => {
-        const res = card.querySelector('#sizzy-scan-result');
-        if (!files.front) { res.innerHTML = '<p class="sizzy-scan-err">Add a front photo first.</p>'; return; }
-        const H = parseFloat(card.querySelector('#sizzy-scan-height').value) || this.profile.heightCm;
-        const out = [];
-        ['front', 'back'].forEach(k => { if (files[k]) { const r = this.analyzePhoto(files[k], H); this.drawScanPreview(drops[k], files[k], r); out.push(r); } });
-        const ok = out.filter(r => r.ok);
-        if (!ok.length) { res.innerHTML = '<p class="sizzy-scan-err">' + out[0].msg + '</p>'; return; }
-        const avg = (key) => Math.round(ok.reduce((s, r) => s + r[key], 0) / ok.length);
-        const chest = avg('chest'), waist = avg('waist'), shoulder = avg('shoulder');
-        let note = ok.length === 2 ? 'Front and back averaged.' : 'Add a back photo for a steadier estimate.';
-        if (ok.length === 2 && Math.abs(ok[0].chestW - ok[1].chestW) / ok[0].chestW > 0.12) note = 'Front and back differ a lot. Retake for better accuracy.';
-        res.innerHTML = `<div class="sizzy-scan-metrics"><div><span>Chest</span><b>${chest} cm</b></div><div><span>Waist</span><b>${waist} cm</b></div><div><span>Shoulder</span><b>${shoulder} cm</b></div></div><p class="sizzy-scan-tip">${note} About ±4 cm.</p><button type="button" class="sizzy-btn sizzy-btn-secondary sizzy-btn-block" id="sizzy-scan-apply">Use these measurements</button>`;
-        res.querySelector('#sizzy-scan-apply').addEventListener('click', () => {
-          this.saveProfile({ heightCm: Math.round(H), manualChest: chest, manualWaist: waist, manualShoulder: shoulder });
-          this.renderStudioView(container);
+
+      const showResult = (m, buildName, note) => {
+        res.innerHTML =
+          '<p class="sizzy-scan-synced">Synced to your profile</p>' +
+          '<div class="sizzy-scan-metrics"><div><span>Chest</span><b>' + m.chest + ' cm</b></div><div><span>Waist</span><b>' + m.waist + ' cm</b></div><div><span>Shoulder</span><b>' + m.shoulder + ' cm</b></div></div>' +
+          '<p class="sizzy-scan-tip">' + note + ' Build set to ' + buildName + '. About ±4 cm.</p>' +
+          '<div class="sizzy-scan-actions"><button type="button" class="sizzy-btn sizzy-btn-secondary" id="sizzy-scan-clear">Clear</button><button type="button" class="sizzy-btn sizzy-btn-primary" id="sizzy-scan-see">See my sizes</button></div>';
+        res.querySelector('#sizzy-scan-see').addEventListener('click', () => this.scrollToStudioResults(container));
+        res.querySelector('#sizzy-scan-clear').addEventListener('click', () => {
+          this.saveProfile({ manualChest: '', manualWaist: '', manualShoulder: '', measuredFrom: '' }, true);
+          this.syncStudioForm(container);
+          this.recalculateStudio();
+          res.innerHTML = '';
+          this.showToast('Photo measurements cleared.', 'info');
         });
+      };
+
+      go.addEventListener('click', () => {
+        if (!files.front) { res.innerHTML = '<p class="sizzy-scan-err">Add a front photo first.</p>'; return; }
+        const H = this.getStudioHeightCm(container);
+        go.disabled = true;
+        go.textContent = 'Estimating...';
+        setTimeout(() => {
+          try {
+            const out = [];
+            ['front', 'back'].forEach(k => { if (files[k]) { const r = this.analyzePhoto(files[k], H); this.drawScanPreview(drops[k], files[k], r); out.push(r); } });
+            const ok = out.filter(r => r.ok);
+            if (!ok.length) { res.innerHTML = '<p class="sizzy-scan-err">' + out[0].msg + '</p>'; return; }
+            const avg = (key) => Math.round(ok.reduce((t, r) => t + r[key], 0) / ok.length);
+            const m = { chest: avg('chest'), waist: avg('waist'), shoulder: avg('shoulder') };
+            let note = ok.length === 2 ? 'Front and back averaged.' : 'Add a back photo for a steadier estimate.';
+            if (ok.length === 2 && Math.abs(ok[0].chestW - ok[1].chestW) / ok[0].chestW > 0.12) note = 'Front and back differ a lot. Retake for better accuracy.';
+
+            // Pick the build whose chest offset is closest to what the photo shows
+            const base = SizzyEngine.estimateMeasurements({ ...this.profile, heightCm: H, build: 'average', usualBrand: '', usualSize: '', manualChest: '', manualWaist: '', manualShoulder: '' }).chestCm;
+            const diff = m.chest - base;
+            let build = 'average', best = Infinity;
+            Object.keys(SizzyEngine.BUILD_OFFSETS).forEach(key => { const d = Math.abs(SizzyEngine.BUILD_OFFSETS[key] - diff); if (d < best) { best = d; build = key; } });
+
+            this.saveProfile({ heightCm: Math.round(H), build, manualChest: m.chest, manualWaist: m.waist, manualShoulder: m.shoulder, measuredFrom: 'photos' }, true);
+            this.syncStudioForm(container);
+            this.recalculateStudio();
+            showResult(m, build, note);
+            this.showToast('Sizes updated from your photos.', 'success');
+          } finally {
+            go.disabled = false;
+            go.textContent = 'Estimate my size';
+          }
+        }, 30);
       });
     },
 
@@ -5791,107 +5834,110 @@ BOTTOMS: {
       `;
     },
 
+    readStudioForm(container, showErrors) {
+      const ft = this.profile.unit === 'in';
+      const hErr = container.querySelector('#sizzy-height-error');
+      const wErr = container.querySelector('#sizzy-weight-error');
+      const rawH = parseFloat(container.querySelector('#sizzy-input-height').value);
+      const rawW = parseFloat(container.querySelector('#sizzy-input-weight').value);
+      const heightCm = ft ? rawH * 2.54 : rawH;
+      const weightKg = ft ? rawW / 2.20462 : rawW;
+      let ok = true;
+      hErr.textContent = '';
+      wErr.textContent = '';
+      if (isNaN(heightCm) || heightCm < 120 || heightCm > 220) {
+        ok = false;
+        if (showErrors) hErr.textContent = ft ? 'Enter 47 to 87 inches.' : 'Enter 120 to 220 cm.';
+      }
+      if (isNaN(weightKg) || weightKg < 30 || weightKg > 200) {
+        ok = false;
+        if (showErrors) wErr.textContent = ft ? 'Enter 66 to 440 lb.' : 'Enter 30 to 200 kg.';
+      }
+      return { ok, heightCm: Math.round(heightCm), weightKg: Math.round(weightKg) };
+    },
+
+    readTapeValues(container) {
+      const v = (id) => { const x = parseFloat(container.querySelector(id).value); return x > 0 ? x : ''; };
+      return { manualChest: v('#sizzy-manual-chest'), manualWaist: v('#sizzy-manual-waist'), manualShoulder: v('#sizzy-manual-shoulder') };
+    },
+
     bindStudioEvents(container) {
       const form = container.querySelector('#sizzy-studio-form');
       this.bindScanEvents(container);
 
+      const apply = (values) => {
+        this.saveProfile(values, true);
+        this.syncStudioForm(container);
+        this.recalculateStudio();
+      };
+      let timer = null;
+      const later = (fn) => { clearTimeout(timer); timer = setTimeout(fn, 220); };
+
       container.querySelectorAll('#sizzy-gender-toggle .sizzy-seg-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          container.querySelectorAll('#sizzy-gender-toggle .sizzy-seg-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          this.profile.gender = btn.getAttribute('data-val');
-          this.recalculateStudio();
-        });
+        btn.addEventListener('click', () => apply({ gender: btn.getAttribute('data-val') }));
       });
 
       container.querySelectorAll('#sizzy-unit-toggle .sizzy-seg-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          container.querySelectorAll('#sizzy-unit-toggle .sizzy-seg-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          this.profile.unit = btn.getAttribute('data-val');
-          this.renderStudioView(container);
+          const f = this.readStudioForm(container, false);
+          apply(f.ok ? { unit: btn.getAttribute('data-val'), heightCm: f.heightCm, weightKg: f.weightKg } : { unit: btn.getAttribute('data-val') });
         });
       });
 
       container.querySelectorAll('.sizzy-build-card').forEach(card => {
-        card.addEventListener('click', () => {
-          container.querySelectorAll('.sizzy-build-card').forEach(c => c.classList.remove('active'));
-          card.classList.add('active');
-          this.profile.build = card.getAttribute('data-build');
-          this.recalculateStudio();
-        });
+        card.addEventListener('click', () => apply({ build: card.getAttribute('data-build') }));
+      });
+
+      container.querySelectorAll('#sizzy-fit-pref-toggle .sizzy-seg-btn').forEach(btn => {
+        btn.addEventListener('click', () => apply({ fitPreference: btn.getAttribute('data-val') }));
       });
 
       const usualBrandSelect = container.querySelector('#sizzy-usual-brand');
       if (usualBrandSelect) {
-        usualBrandSelect.addEventListener('change', (e) => {
-          this.profile.usualBrand = e.target.value;
-          this.recalculateStudio();
-        });
+        usualBrandSelect.addEventListener('change', (e) => apply(e.target.value ? { usualBrand: e.target.value } : { usualBrand: '', usualSize: '' }));
       }
 
       container.querySelectorAll('#sizzy-usual-size-chips .sizzy-size-chip').forEach(chip => {
         chip.addEventListener('click', () => {
-          container.querySelectorAll('#sizzy-usual-size-chips .sizzy-size-chip').forEach(c => c.classList.remove('active'));
-          chip.classList.add('active');
-          this.profile.usualSize = chip.getAttribute('data-size');
-          this.recalculateStudio();
+          const size = chip.getAttribute('data-size');
+          const brand = container.querySelector('#sizzy-usual-brand').value;
+          if (!brand) { this.showToast('Pick a brand first.', 'info'); return; }
+          apply({ usualSize: this.profile.usualSize === size ? '' : size });
         });
       });
 
-      container.querySelectorAll('#sizzy-fit-pref-toggle .sizzy-seg-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          container.querySelectorAll('#sizzy-fit-pref-toggle .sizzy-seg-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          this.profile.fitPreference = btn.getAttribute('data-val');
+      // Height and weight update live once they are valid
+      ['#sizzy-input-height', '#sizzy-input-weight'].forEach(sel => {
+        const input = container.querySelector(sel);
+        input.addEventListener('input', () => later(() => {
+          const f = this.readStudioForm(container, false);
+          if (!f.ok) return;
+          this.saveProfile({ heightCm: f.heightCm, weightKg: f.weightKg }, true);
+          const note = container.querySelector('#sizzy-scan-height-note');
+          if (note) note.textContent = f.heightCm + ' cm';
           this.recalculateStudio();
-        });
+        }));
+        input.addEventListener('change', () => this.readStudioForm(container, true));
+      });
+
+      // Tape measurements override the estimate, and stop being "from photos" once edited by hand
+      ['#sizzy-manual-chest', '#sizzy-manual-waist', '#sizzy-manual-shoulder'].forEach(sel => {
+        container.querySelector(sel).addEventListener('input', () => later(() => {
+          this.saveProfile({ ...this.readTapeValues(container), measuredFrom: '' }, true);
+          const badge = container.querySelector('#sizzy-tape-badge');
+          if (badge) badge.textContent = 'Most accurate';
+          this.recalculateStudio();
+        }));
       });
 
       if (form) {
         form.addEventListener('submit', (e) => {
           e.preventDefault();
-          const heightInput = container.querySelector('#sizzy-input-height');
-          const weightInput = container.querySelector('#sizzy-input-weight');
-          const heightErr = container.querySelector('#sizzy-height-error');
-          const weightErr = container.querySelector('#sizzy-weight-error');
-
-          const rawHeight = parseFloat(heightInput.value);
-          const rawWeight = parseFloat(weightInput.value);
-          const isFtLb = this.profile.unit === 'in';
-
-          const heightCm = isFtLb ? rawHeight * 2.54 : rawHeight;
-          const weightKg = isFtLb ? rawWeight / 2.20462 : rawWeight;
-
-          let hasError = false;
-          heightErr.textContent = '';
-          weightErr.textContent = '';
-
-          if (isNaN(heightCm) || heightCm < 120 || heightCm > 220) {
-            heightErr.textContent = isFtLb ? 'Height must be between 47 and 87 inches.' : 'Height must be between 120 and 220 cm.';
-            hasError = true;
-          }
-
-          if (isNaN(weightKg) || weightKg < 30 || weightKg > 200) {
-            weightErr.textContent = isFtLb ? 'Weight must be between 66 and 440 lb.' : 'Weight must be between 30 and 200 kg.';
-            hasError = true;
-          }
-
-          if (hasError) return;
-
-          const manualChest = container.querySelector('#sizzy-manual-chest').value;
-          const manualWaist = container.querySelector('#sizzy-manual-waist').value;
-          const manualShoulder = container.querySelector('#sizzy-manual-shoulder').value;
-
-          this.saveProfile({
-            heightCm: Math.round(heightCm),
-            weightKg: Math.round(weightKg),
-            manualChest: manualChest ? parseFloat(manualChest) : '',
-            manualWaist: manualWaist ? parseFloat(manualWaist) : '',
-            manualShoulder: manualShoulder ? parseFloat(manualShoulder) : ''
-          });
-
+          const f = this.readStudioForm(container, true);
+          if (!f.ok) return;
+          this.saveProfile({ heightCm: f.heightCm, weightKg: f.weightKg, ...this.readTapeValues(container) });
           this.recalculateStudio();
+          this.scrollToStudioResults(container);
         });
       }
 
@@ -5954,6 +6000,7 @@ BOTTOMS: {
               <span class="sizzy-brand-size-label">Your size</span>
               <span class="sizzy-big-size-num">${match.size}</span>
               <span class="sizzy-run-tag ${tagClass}">${match.runTag}</span>
+              ${match.isPlaceholder ? '<span class="sizzy-badge-chip" title="This brand chart is an estimate. Confirm on the brand site.">Estimated chart</span>' : ''}
             </div>
 
             <div class="sizzy-match-meter">
@@ -6898,7 +6945,7 @@ BOTTOMS: {
               </div>
 
               <div class="sizzy-lab-fours">
-                <h3 class="sizzy-card-title">Same you. Four sizes.</h3>
+                <h3 class="sizzy-card-title">Your size in S, M, L and XL</h3>
                 <div class="sizzy-strip-row" id="sizzy-av-strip"></div>
               </div>
             </div>
@@ -7142,69 +7189,6 @@ BOTTOMS: {
     },
 
     /* ========================================================================
-       VIEW: BRANDS (#/brands)
-       ======================================================================== */
-    renderBrandsView(container) {
-      const brands = window.SIZZY_DATA.BRANDS;
-      const offsets = Storage.get(Storage.KEYS.OFFSETS, {});
-      container.innerHTML = `
-        <div class="sizzy-brands-view">
-          <div class="sizzy-section-header">
-            <h1 class="sizzy-view-title">Brands</h1>
-            <p class="sizzy-mini-hint">Tap − or + to tune a brand to your body.</p>
-          </div>
-          <div class="sizzy-brand-grid">
-            ${brands.map(b => {
-              const off = offsets[b.id] || 0;
-              return `<div class="sizzy-card sizzy-brand-tile">
-                <div class="sizzy-brand-logo">${this.renderBrandWordmark(b.id, b.name)}</div>
-                <div class="sizzy-brand-meta">${b.countryOrigin}</div>
-                <div class="sizzy-offset-row">
-                  <button type="button" class="sizzy-offset-nudge" data-brand="${b.id}" data-nudge="-1" aria-label="Looser">&minus;</button>
-                  <span class="${off ? 'sizzy-lime-text' : ''}">${off > 0 ? '+' : ''}${off} cm</span>
-                  <button type="button" class="sizzy-offset-nudge" data-brand="${b.id}" data-nudge="1" aria-label="Tighter">+</button>
-                </div>
-              </div>`;
-            }).join('')}
-          </div>
-        </div>`;
-      container.querySelectorAll('.sizzy-offset-nudge').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const offs = Storage.get(Storage.KEYS.OFFSETS, {});
-          offs[btn.dataset.brand] = (offs[btn.dataset.brand] || 0) + parseInt(btn.dataset.nudge, 10);
-          Storage.set(Storage.KEYS.OFFSETS, offs);
-          this.renderBrandsView(container);
-        });
-      });
-    },
-
-    renderCommunityView(container) {
-      const revs = (window.SIZZY_DATA && window.SIZZY_DATA.SAMPLE_REVIEWS) || [];
-      const matched = revs.filter(r => r.verdict === 'Just right').length;
-      const ids = ['milan-jersey', 'sky-stripe-shirt', 'lilac-checker-tee', 'mint-heart-tee', 'coral-varsity', 'cream-camp', 'pink-flower-tee', 'yellow-striped-polo'];
-      const skins = ['#D9A27E', '#F7D0B5', '#B9805A', '#E8B890'];
-      container.innerHTML = `
-        <div class="sizzy-community-view">
-          <div class="sizzy-section-header">
-            <h1 class="sizzy-view-title">Community</h1>
-            <div class="sizzy-cm-stat"><b>${revs.length ? Math.round(matched / revs.length * 100) : 0}%</b> got the right size &middot; ${revs.length} reviews</div>
-          </div>
-          <div class="sizzy-cm-grid">
-            ${revs.map((r, i) => `
-              <div class="sizzy-card sizzy-cm-card">
-                <div class="sizzy-cm-top">
-                  <span class="sizzy-pfp">${PixelAvatar.renderAvatarSvg({ head: true, gender: /^(Diya|Ananya|Meera|Isha|Sana|Tara)/.test(r.userName) ? 'girl' : 'guy', outfit: ids[i % 8], skin: skins[i % 4], build: 'average' })}</span>
-                  <div><b>${this.escapeHtml(r.userName)}</b><small>${r.userHeight} &middot; ${r.userWeight}</small></div>
-                </div>
-                <div class="sizzy-cm-item">${this.renderBrandWordmark(r.brand, r.brandName)}<span>${this.escapeHtml(r.itemTitle)}</span></div>
-                <div class="sizzy-cm-sizes"><span>Bought <b>${r.boughtSize}</b></span><span class="sizzy-verdict-tag ${r.verdict === 'Just right' ? 'lime' : 'coral'}">${r.verdict}</span></div>
-                <p class="sizzy-cm-text">&ldquo;${this.escapeHtml(r.comment)}&rdquo;</p>
-              </div>`).join('')}
-          </div>
-        </div>`;
-    },
-
-    /* ========================================================================
        VIEW: COMPARE (#/compare)
        ======================================================================== */
     renderCompareView(container) {
@@ -7286,6 +7270,62 @@ BOTTOMS: {
       bar.innerHTML = `<span><b>${n}</b> selected</span><a class="sizzy-btn sizzy-btn-primary sizzy-btn-small" href="#/compare">Compare</a><button type="button" class="sizzy-compare-clear">Clear</button>`;
     },
 
+    /* Custom number stepper: replaces the browser's tiny native arrows */
+    enhanceNumbers(root) {
+      root.querySelectorAll('input[type="number"]:not([data-num])').forEach(inp => {
+        inp.dataset.num = '1';
+        const wrap = document.createElement('div');
+        wrap.className = 'sizzy-num';
+        inp.parentNode.insertBefore(wrap, inp);
+        wrap.appendChild(inp);
+
+        const chev = (up) => '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="' + (up ? 'M6 15l6-6 6 6' : 'M6 9l6 6 6-6') + '"/></svg>';
+        const steps = document.createElement('div');
+        steps.className = 'sizzy-num-steps';
+        steps.innerHTML = '<button type="button" class="sizzy-num-btn up" tabindex="-1" aria-label="Increase">' + chev(true) + '</button><button type="button" class="sizzy-num-btn down" tabindex="-1" aria-label="Decrease">' + chev(false) + '</button>';
+        const line = document.createElement('span');
+        line.className = 'sizzy-num-line';
+        wrap.append(steps, line);
+
+        const step = (dir) => {
+          const st = parseFloat(inp.step) || 1;
+          const min = inp.min !== '' ? parseFloat(inp.min) : -Infinity;
+          const max = inp.max !== '' ? parseFloat(inp.max) : Infinity;
+          let v = parseFloat(inp.value);
+          if (isNaN(v)) v = parseFloat(inp.placeholder);
+          if (isNaN(v)) v = isFinite(min) ? min : 0;
+          else v += dir * st;
+          v = Math.min(max, Math.max(min, v));
+          const dec = (String(st).split('.')[1] || '').length;
+          inp.value = dec ? v.toFixed(dec) : String(Math.round(v));
+          inp.dispatchEvent(new Event('input', { bubbles: true }));
+          inp.dispatchEvent(new Event('change', { bubbles: true }));
+        };
+        inp.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            step(e.key === 'ArrowUp' ? 1 : -1);
+            const b = steps.querySelector(e.key === 'ArrowUp' ? '.up' : '.down');
+            b.classList.add('tap'); setTimeout(() => b.classList.remove('tap'), 140);
+          }
+        });
+        steps.querySelectorAll('.sizzy-num-btn').forEach(btn => {
+          const dir = btn.classList.contains('up') ? 1 : -1;
+          let delay = null, timer = null;
+          const stop = () => { clearTimeout(delay); clearInterval(timer); };
+          btn.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            inp.focus();
+            step(dir);
+            delay = setTimeout(() => { timer = setInterval(() => step(dir), 70); }, 380);
+          });
+          ['mouseup', 'mouseleave', 'blur'].forEach(ev => btn.addEventListener(ev, stop));
+          btn.addEventListener('touchstart', (e) => { e.preventDefault(); inp.focus(); step(dir); delay = setTimeout(() => { timer = setInterval(() => step(dir), 70); }, 380); }, { passive: false });
+          ['touchend', 'touchcancel'].forEach(ev => btn.addEventListener(ev, stop));
+        });
+      });
+    },
+
     enhanceSelects(root) {
       root.querySelectorAll('select:not([data-enh])').forEach(sel => {
         sel.dataset.enh = '1';
@@ -7343,45 +7383,6 @@ BOTTOMS: {
         });
         sync();
       });
-    },
-
-    refreshAuthPill() {
-      const b = document.getElementById('sizzy-signin-btn');
-      if (!b) return;
-      const u = Storage.get(Storage.KEYS.AUTH, null);
-      const lab = b.querySelector('.sizzy-signin-label');
-      const name = u && u.name ? u.name.split(' ')[0].slice(0, 12) : '';
-      if (lab) lab.textContent = name || 'Sign In';
-      b.classList.toggle('signed', !!name);
-    },
-
-    openAuthModal() {
-      const modal = document.getElementById('sizzy-auth-modal');
-      if (!modal) return;
-      const user = Storage.get(Storage.KEYS.AUTH, null) || { name: '', email: '' };
-      const nameInput = modal.querySelector('#sizzy-auth-name');
-      const emailInput = modal.querySelector('#sizzy-auth-email');
-      const outBtn = modal.querySelector('#sizzy-signout-btn');
-      nameInput.value = user.name || '';
-      emailInput.value = user.email || '';
-      if (outBtn) outBtn.style.display = user.name ? '' : 'none';
-      modal.classList.add('active');
-      setTimeout(() => nameInput.focus(), 60);
-      modal.querySelector('#sizzy-auth-form').onsubmit = (e) => {
-        e.preventDefault();
-        const name = nameInput.value.trim();
-        if (!name) { const card = modal.querySelector('.sizzy-auth-card'); if (card) { card.classList.remove('shake'); void card.offsetWidth; card.classList.add('shake'); } nameInput.focus(); return; }
-        Storage.set(Storage.KEYS.AUTH, { name, email: emailInput.value.trim() });
-        modal.classList.remove('active');
-        this.refreshAuthPill();
-        this.showToast('Welcome, ' + name + '. Saved on this device.', 'success');
-      };
-      if (outBtn) outBtn.onclick = () => {
-        Storage.remove(Storage.KEYS.AUTH);
-        modal.classList.remove('active');
-        this.refreshAuthPill();
-        this.showToast('Signed out.', 'info');
-      };
     },
 
     openFaqDrawer() {
