@@ -7014,7 +7014,7 @@ BOTTOMS: {
         chestSlide.addEventListener('input', () => {
           const c = parseFloat(chestSlide.value);
           chestVal.textContent = `${c} cm`;
-          this.updateLabMatrix(parseFloat(heightSlide.value), parseFloat(weightSlide.value), currentBuild, c);
+          try { this.updateLabMatrix(parseFloat(heightSlide.value), parseFloat(weightSlide.value), currentBuild, c); } catch (err) { console.error('[Sizzy Matrix]', err); }
         });
       }
 
@@ -7109,26 +7109,40 @@ BOTTOMS: {
     },
 
     updateLabMatrix(heightCm, weightKg, build, explicitChest = null) {
-      const chest = explicitChest || SizzyEngine.estimateMeasurements({ heightCm, weightKg, build, gender: this.profile.gender }).chestCm;
-      const activeBrands = window.SIZZY_DATA.BRANDS.filter(b => b.hasActiveChart);
       const tbody = document.getElementById('sizzy-lab-matrix-body');
       if (!tbody) return;
-
-      tbody.innerHTML = activeBrands.map(b => {
-        const match = SizzyEngine.matchBrandSize(b.id, chest, this.profile.gender);
-        if (!match.found) return '';
-
-        return `
-          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+      try {
+        const chest = Number(explicitChest) > 0
+          ? Number(explicitChest)
+          : SizzyEngine.estimateMeasurements({ heightCm, weightKg, build, gender: this.profile.gender }).chestCm;
+        const data = window.SIZZY_DATA;
+        const brands = data && Array.isArray(data.BRANDS) ? data.BRANDS : [];
+        if (!brands.length) {
+          tbody.innerHTML = '<tr><td colspan="6" style="padding:16px;color:var(--text-muted)">Sizing data is unavailable. Refresh the page and try again.</td></tr>';
+          return;
+        }
+        const activeBrands = brands.filter(b => b && b.hasActiveChart);
+        const gender = (this.profile.gender === 'women' || this.profile.gender === 'girl') ? 'women' : 'men';
+        const rows = activeBrands.map(b => {
+          let match = SizzyEngine.matchBrandSize(b.id, chest, gender);
+          if (!match || !match.found) match = SizzyEngine.matchBrandSize(b.id, chest, 'men');
+          if (!match || !match.found) return '';
+          const runTag = match.runTag || 'standard';
+          const fitStatus = match.borderline ? 'Borderline' : (match.isOutOfRange ? 'Out of range' : 'Clear fit');
+          return `<tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
             <td style="padding:12px 14px;"><strong>${this.renderBrandWordmark(b.id, b.name)}</strong></td>
-            <td style="padding:12px 14px; color:var(--text-muted);">${b.countryOrigin}</td>
-            <td style="padding:12px 14px;"><span class="sizzy-matrix-size-pill" style="font-size:20px; font-weight:800; color:var(--lime);">${match.size}</span></td>
-            <td style="padding:12px 14px; color:var(--text-muted);">${match.chestMin}–${match.chestMax} cm</td>
-            <td style="padding:12px 14px;"><span class="sizzy-run-tag ${match.runTag === 'runs small' ? 'coral' : 'lime'}">${match.runTag}</span></td>
-            <td style="padding:12px 14px;"><strong>${(match.borderline ? 'Borderline' : (match.isOutOfRange ? 'Out of range' : 'Clear fit'))}</strong></td>
-          </tr>
-        `;
-      }).join('');
+            <td style="padding:12px 14px;color:var(--text-muted);">${b.countryOrigin || '—'}</td>
+            <td style="padding:12px 14px;"><span class="sizzy-matrix-size-pill" style="font-size:20px;font-weight:800;color:var(--lime);">${match.size || '—'}</span></td>
+            <td style="padding:12px 14px;color:var(--text-muted);">${match.chestMin ?? '—'}–${match.chestMax ?? '—'} cm</td>
+            <td style="padding:12px 14px;"><span class="sizzy-run-tag ${runTag === 'runs small' ? 'coral' : 'lime'}">${runTag}</span></td>
+            <td style="padding:12px 14px;"><strong>${fitStatus}</strong></td>
+          </tr>`;
+        }).join('');
+        tbody.innerHTML = rows || '<tr><td colspan="6" style="padding:16px;color:var(--text-muted)">No size-chart matches available for this measurement.</td></tr>';
+      } catch (err) {
+        console.error('[Sizzy Matrix] Rendering failed:', err);
+        tbody.innerHTML = '<tr><td colspan="6" style="padding:16px;color:var(--coral)">Could not load the sizing matrix. Please adjust the measurements or refresh the page.</td></tr>';
+      }
     },
 
     /* ========================================================================
