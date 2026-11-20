@@ -59,24 +59,6 @@ No account. No backend. No uploads. Everything runs in your browser.
 
 ---
 
-## ✦ Supported Brands
-
-**26 brands**, with charts sourced from each brand's publicly published size guides and a link back to the live source page.
-
-<div align="center">
-
-**Core brands**<br/>
-Zara · H&M · Uniqlo · Snitch · Bewakoof · Levi's · Roadster · Jack & Jones
-
-**Also covered**<br/>
-Nike · Adidas · Puma · U.S. Polo Assn. · Allen Solly · Van Heusen · Peter England · Wrogn · Pepe Jeans · Wrangler · Tommy Hilfiger · HRX · Flying Machine · Mufti · Garage · Vero Moda · Westside · Max
-
-</div>
-
-> **Heads up:** Charts for the "also covered" brands are **estimated** from typical size patterns and are flagged as such in the app. Always confirm on the brand's site before you buy.
-
----
-
 ## ✦ Design
 
 A dark, glassy interface with a lime accent.
