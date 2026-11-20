@@ -1,126 +1,185 @@
+<div align="center">
+
+<img src="favicon.svg" alt="Sizzy logo" width="80" height="80" />
+
 # SIZZY
 
 ### Your True Size. Every Brand. Zero Guessing.
 
-A smarter way to find your perfect fit.
+*Height, weight and build in. Your size at every brand out.*
 
-\<p align="center">
-&#x20; \<a href="[https://sizzy-studio.vercel.app/](https://sizzy-studio.vercel.app/)">Live Demo\</a> ·
-&#x20; \<a href="[https://github.com/akshar-g/Sizzy](https://github.com/akshar-g/Sizzy)">Source Code\</a>
-\</p>
+<br/>
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-sizzy--studio.vercel.app-C8FF3D?style=for-the-badge&logo=vercel&logoColor=black&labelColor=07080A)](https://sizzy-studio.vercel.app/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-C8FF3D?style=for-the-badge&labelColor=07080A)](LICENSE)
+
+![HTML5](https://img.shields.io/badge/HTML5-07080A?style=flat-square&logo=html5&logoColor=C8FF3D)
+![CSS3](https://img.shields.io/badge/CSS3-07080A?style=flat-square&logo=css3&logoColor=C8FF3D)
+![JavaScript](https://img.shields.io/badge/Vanilla_JS-07080A?style=flat-square&logo=javascript&logoColor=C8FF3D)
+![Zero Dependencies](https://img.shields.io/badge/Dependencies-0-07080A?style=flat-square&labelColor=07080A&color=C8FF3D)
+![No Backend](https://img.shields.io/badge/Backend-None-07080A?style=flat-square&labelColor=07080A&color=C8FF3D)
+![Vercel](https://img.shields.io/badge/Vercel-07080A?style=flat-square&logo=vercel&logoColor=C8FF3D)
+
+[**Live Demo**](https://sizzy-studio.vercel.app/) · [**Source Code**](https://github.com/akshar-g/Sizzy) · [**Report a Bug**](https://github.com/akshar-g/Sizzy/issues)
+
+</div>
 
 ---
 
-## Overview
+## ✦ Overview
 
-**Sizzy** is a modern fashion-tech platform that makes finding the right clothing size simpler.
+**Sizzy** is a fashion-tech web app that takes the guesswork out of buying clothes online.
 
-Different brands follow different sizing standards. Sizzy bridges that gap by transforming your measurements into personalized, brand-specific size recommendations.
+There is no global standard for clothing sizes. A Medium at one brand fits like a Large at another. Most people don't know their exact chest measurement, but almost everyone knows their **height, weight and general build**. Sizzy turns those three numbers into **brand-specific size recommendations**, using each brand's published size charts and transparent ease calculations.
 
-From intelligent size estimation to interactive fit visualization, Sizzy brings a smarter shopping experience into one place.
+No account. No backend. No uploads. Everything runs in your browser.
 
-**Measure once. Shop anywhere. Find your fit.**
+---
 
-## Features
+## ✦ Features
 
-- **Size Studio** — Get personalized size recommendations using your measurements, with optional photo-based estimation.
-- **Fit Lab** — Explore different sizes and visualize snug, regular, and oversized fits.
-- **Fashion Catalog** — Discover clothing, explore garment sizing, and add custom items.
-- **My Closet** — Save your favorite items, looks, and personal fit preferences.
-- **Brand Comparison** — Compare sizing across multiple fashion brands.
-- **Fit Journal** — Keep track of your saved sizing preferences and fit experiences.
-- **Community** — Explore clothing reviews and shared fit experiences.
+| | Feature | What it does |
+|---|---|---|
+| 📏 | **Find My Size** | Enter height, weight and build (metric or imperial, men's or women's) to get estimated measurements and a recommended size at every brand. Add a size you already own to sharpen the result. |
+| 📷 | **Photo Estimate** *(optional)* | Add a front and back photo for a quick body estimate. Photos are analysed on-device and never uploaded or stored. |
+| 🧪 | **Fit Lab** | See your build as a pixel-art avatar wearing any size, with a live heatmap of chest and shoulder fit, from snug to oversized. |
+| 👕 | **Catalog** | Browse garments across tees, polos and shirts, filter by brand, category and fit style, and see your size on every item. Add items from any brand page by entering their size-guide numbers. |
+| ⚖️ | **Compare** | Put brands side by side and see how the same body maps to different size charts. |
+| 🗄️ | **My Closet** | Three tabs: **Wishlist** for saved items, **Looks** for saved avatar outfits, and **Fit Journal** for sizes you've tried. |
+| 🎯 | **Self-Learning Fit** | Mark a purchase as "Too tight" or "Too loose" in your Fit Journal and Sizzy nudges that brand's offset by 1 cm for all future recommendations. |
+| ❓ | **Help & FAQ** | A slide-over drawer explaining where the data comes from and how every estimate is calculated. |
 
-## Supported Brands
+---
 
+## ✦ How It Works
+
+1. **Estimate your body.** Chest size is modeled from height and BMI, then adjusted for build (Slim −2 cm, Athletic +3 cm, up to +8 cm for Bigger builds). If you enter a size you already own, the estimate is blended 50/50 with that brand's chest midpoint.
+2. **Normalize each brand.** Some brands publish body measurements and others publish flat garment widths. Sizzy converts garment widths to body circumference by subtracting standard ease (for example 10 cm for regular shirts), so every brand is compared like for like.
+3. **Match and personalize.** Your numbers are matched against each brand's chart, then tuned by your fit preference and any Fit Journal feedback.
+
+---
+
+## ✦ Supported Brands
+
+**26 brands**, with charts sourced from each brand's publicly published size guides and a link back to the live source page.
+
+<div align="center">
+
+**Core brands**<br/>
 Zara · H&M · Uniqlo · Snitch · Bewakoof · Levi's · Roadster · Jack & Jones
 
-## Design
+**Also covered**<br/>
+Nike · Adidas · Puma · U.S. Polo Assn. · Allen Solly · Van Heusen · Peter England · Wrogn · Pepe Jeans · Wrangler · Tommy Hilfiger · HRX · Flying Machine · Mufti · Garage · Vero Moda · Westside · Max
 
-Built with a focus on simplicity, usability, and visual detail.
+</div>
 
-- Minimal dark interface
-- Modern typography
-- Smooth interactions and animations
-- Responsive layouts
-- Interactive SVG visualizations
-- Premium lime-accented aesthetic
+> **Heads up:** Charts for the "also covered" brands are **estimated** from typical size patterns and are flagged as such in the app. Always confirm on the brand's site before you buy.
 
-## Tech Stack
+---
 
-| Technology   | Purpose                |
-| ------------ | ---------------------- |
-| HTML5        | Structure              |
-| CSS3         | Styling and animations |
-| JavaScript   | Application logic      |
-| SVG          | Interactive graphics   |
-| Three.js     | 3D visualization       |
-| LocalStorage | Local data persistence |
+## ✦ Design
 
-## Getting Started
+A dark, glassy interface with a lime accent.
 
-Run Sizzy locally in a few simple steps.
+- 🪟 **Liquid-glass UI** with floating blurred navbar, specular borders and spring-style motion
+- 🎞️ **Scroll-driven hero** with a morphing SVG shirt
+- 🕹️ **Pixel-art avatars** and original SVG garment artwork
+- 🔤 **Typography:** Bricolage Grotesque, Instrument Serif and Inter
+- 🎨 **Palette:** `#07080A` background · `#C8FF3D` lime · `#FF6A45` coral · `#5BB8FF` ice blue · `#FF4081` pink
+- 📱 Responsive layouts and `prefers-reduced-motion` support
 
-**1. Clone the repository**
+---
+
+## ✦ Tech Stack
+
+| Technology | Purpose |
+| :--- | :--- |
+| **HTML5** | Structure and semantic markup |
+| **CSS3** | Liquid-glass design system and animations |
+| **Vanilla JavaScript** | Sizing engine, hash-based routing, and app logic |
+| **SVG** | Garments, avatars, and fit heatmaps |
+| **Canvas API** | On-device photo analysis |
+| **LocalStorage** | Profile, wishlist, looks, and journal persistence |
+| **Google Fonts** | Typography |
+
+Zero frameworks, zero npm packages, zero build step.
+
+---
+
+## ✦ Getting Started
 
 ```bash
+# 1. Clone the repository
 git clone https://github.com/akshar-g/Sizzy.git
-```
 
-**2. Open the project directory**
-
-```bash
+# 2. Open the project directory
 cd Sizzy
+
+# 3. Launch: open index.html in any modern browser
 ```
 
-**3. Launch**
+> **No build. No dependencies. No backend.** Just open and go.
 
-Open `index.html` in a modern web browser.
+---
 
-No build process or backend setup is required.
+## ✦ Privacy First
 
-## Privacy
+Privacy is part of the architecture, not an afterthought.
 
-Privacy is built into Sizzy's architecture.
+- 🚫 No backend, database, or remote profile storage
+- 🚫 No cookies, external tracking, or accounts
+- 💾 Measurements, wishlist, looks, brand offsets and fit journal live **only in your browser's localStorage**
+- 📷 Optional photos are analysed in the browser and **never uploaded or stored**
+- 🔒 Your data stays on your device
 
-- No backend database.
-- No account server or remote profile storage.
-- Measurements and preferences are saved locally in your browser.
-- Optional photos are processed locally and never uploaded.
-- Personal information remains on your device.
+<sub>Clearing your browser's site data will remove everything Sizzy has saved.</sub>
 
-*Clearing browser site data will remove locally saved information.*
+---
 
-## Deployment
-
-Hosted on **Vercel**.
-
-↗ [https://sizzy-studio.vercel.app/](https://sizzy-studio.vercel.app/)
-
-## Project Structure
+## ✦ Project Structure
 
 ```text
 Sizzy/
-├── index.html
-├── favicon.svg
-├── 404.html
-├── robots.txt
-├── .nojekyll
+├── index.html      # The complete app: styles, data engine, and logic
+├── favicon.svg     # App icon
+├── 404.html        # Not-found page
+├── robots.txt      # Crawler rules
+├── .nojekyll       # Disables Jekyll processing
 ├── .gitignore
-├── LICENSE
+├── LICENSE         # MIT License
 └── README.md
 ```
 
-## Disclaimer
+---
 
-Size recommendations are estimates based on available garment sizing information and personal measurements. Actual fit may vary by brand, product, and individual preference.
+## ✦ Deployment
 
-Always check the official brand size guide before purchasing.
-
-## License
-
-Distributed under the MIT License. See [LICENSE](LICENSE) for details.
+Hosted on **Vercel** → [sizzy-studio.vercel.app](https://sizzy-studio.vercel.app/)
 
 ---
 
-\<p align="center">   \<strong>SIZZY ✦\</strong>   \<br/>   Find Your Fit. Own Your Style.   \<br/>\<br/>   Built with care. \</p>
+## ✦ Disclaimer
+
+Size recommendations are estimates based on published garment sizing information and personal measurements. Charts marked as estimated are approximations. Actual fit varies by brand, product, and personal preference. Always check the official brand size guide before purchasing.
+
+---
+
+## ✦ License
+
+Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
+
+---
+
+<div align="center">
+
+**SIZZY ✦**
+
+*Find Your Fit. Own Your Style.*
+
+Built with care.
+
+<br/>
+
+⭐ If you like Sizzy, consider giving it a star on [GitHub](https://github.com/akshar-g/Sizzy).
+
+</div>
